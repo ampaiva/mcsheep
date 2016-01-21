@@ -1,0 +1,224 @@
+<html>
+<head>
+  <title>PMD - View of FigEntryPoint-28-63-FigExitPoint-28-63-false</title>
+</head>
+<body>
+  <h1>PMD - View of FigEntryPoint-28-63-FigExitPoint-28-63-false</h1>
+ 	<div id="diff1">
+  	<h2>Copy</h2>
+	<font color="red"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FigEntryPoint(Object&nbsp;owner,&nbsp;Rectangle&nbsp;bounds,&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DiagramSettings&nbsp;settings)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(owner,&nbsp;bounds,&nbsp;settings);
+</br></font><font color="red"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;GraphNode&nbsp;getGraphNode()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setGraphNode(GraphNode&nbsp;node)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.node&nbsp;=&nbsp;(FigVertex)&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setEnclosingFig(Fig&nbsp;encloser)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;Note&nbsp;copy/paste&nbsp;code&nbsp;in&nbsp;FigExitPoint&nbsp;-&nbsp;where&nbsp;is&nbsp;this&nbsp;code
+</br></font><font color="red"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;better&nbsp;placed&nbsp;in&nbsp;GEF?
+</br></font><font color="red"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LayerPerspective&nbsp;lp&nbsp;=&nbsp;(LayerPerspective)&nbsp;getLayer();
+</br></font><font color="red"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(lp&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.setEnclosingFig(encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;vertex&nbsp;=&nbsp;((FigVertex)&nbsp;encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(vertex&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertex.addConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;previousVertex&nbsp;=&nbsp;(FigVertex)&nbsp;getGraphNode();
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(previousVertex&nbsp;!=&nbsp;null)
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousVertex.removeConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	</div>
+	<br>
+	<div id="diff2">
+  	<h2>Paste</h2>
+	<font color="red"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FigExitPoint(Object&nbsp;owner,&nbsp;Rectangle&nbsp;bounds,&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DiagramSettings&nbsp;settings)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(owner,&nbsp;bounds,&nbsp;settings);
+</br></font><font color="red"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;GraphNode&nbsp;getGraphNode()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setGraphNode(GraphNode&nbsp;node)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.node&nbsp;=&nbsp;(FigVertex)&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setEnclosingFig(Fig&nbsp;encloser)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;Note&nbsp;copy/paste&nbsp;code&nbsp;in&nbsp;FigEntryPoint&nbsp;-&nbsp;where&nbsp;is&nbsp;this&nbsp;code
+</br></font><font color="red"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;better&nbsp;placed&nbsp;in&nbsp;GEF?
+</br></font><font color="red"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LayerPerspective&nbsp;lp&nbsp;=&nbsp;(LayerPerspective)&nbsp;getLayer();
+</br></font><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(lp&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.setEnclosingFig(encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;vertex&nbsp;=&nbsp;((FigVertex)&nbsp;encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(vertex&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertex.addConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;previousVertex&nbsp;=&nbsp;(FigVertex)&nbsp;getGraphNode();
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(previousVertex&nbsp;!=&nbsp;null)
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousVertex.removeConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	</div>
+	<br>
+	<br>
+	<div id="source1">
+  	<h2>Source of Copy</h2>
+	<font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;$Id:&nbsp;$
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*****************************************************************************
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2011&nbsp;Contributors&nbsp;-&nbsp;see&nbsp;below
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;All&nbsp;rights&nbsp;reserved.&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;v1.0
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;which&nbsp;accompanies&nbsp;this&nbsp;distribution,&nbsp;and&nbsp;is&nbsp;available&nbsp;at
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;http://www.eclipse.org/legal/epl-v10.html
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Contributors:
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;Bob&nbsp;Tarling
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*****************************************************************************
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.argouml.state2.diagram;
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.awt.Rectangle;
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.argouml.uml.diagram.DiagramSettings;
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.base.LayerPerspective;
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.di.GraphNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.presentation.Connector;
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.presentation.Fig;
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.presentation.FigNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;FigEntryPoint&nbsp;extends&nbsp;FigCircleState&nbsp;implements&nbsp;Connector&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;node;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FigEntryPoint(Object&nbsp;owner,&nbsp;Rectangle&nbsp;bounds,&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DiagramSettings&nbsp;settings)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(owner,&nbsp;bounds,&nbsp;settings);
+</br></font><font color="red"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;GraphNode&nbsp;getGraphNode()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setGraphNode(GraphNode&nbsp;node)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.node&nbsp;=&nbsp;(FigVertex)&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setEnclosingFig(Fig&nbsp;encloser)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;Note&nbsp;copy/paste&nbsp;code&nbsp;in&nbsp;FigExitPoint&nbsp;-&nbsp;where&nbsp;is&nbsp;this&nbsp;code
+</br></font><font color="red"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;better&nbsp;placed&nbsp;in&nbsp;GEF?
+</br></font><font color="red"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LayerPerspective&nbsp;lp&nbsp;=&nbsp;(LayerPerspective)&nbsp;getLayer();
+</br></font><font color="red"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(lp&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.setEnclosingFig(encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;vertex&nbsp;=&nbsp;((FigVertex)&nbsp;encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(vertex&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertex.addConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;previousVertex&nbsp;=&nbsp;(FigVertex)&nbsp;getGraphNode();
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(previousVertex&nbsp;!=&nbsp;null)
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousVertex.removeConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	</div>
+	<br>
+	<div id="source2">
+  	<h2>Source of Paste</h2>
+	<font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;$Id:&nbsp;$
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*****************************************************************************
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2011&nbsp;Contributors&nbsp;-&nbsp;see&nbsp;below
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;All&nbsp;rights&nbsp;reserved.&nbsp;This&nbsp;program&nbsp;and&nbsp;the&nbsp;accompanying&nbsp;materials
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;are&nbsp;made&nbsp;available&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;Eclipse&nbsp;Public&nbsp;License&nbsp;v1.0
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;which&nbsp;accompanies&nbsp;this&nbsp;distribution,&nbsp;and&nbsp;is&nbsp;available&nbsp;at
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;http://www.eclipse.org/legal/epl-v10.html
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Contributors:
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;Bob&nbsp;Tarling
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*****************************************************************************
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.argouml.state2.diagram;
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.awt.Rectangle;
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.argouml.uml.diagram.DiagramSettings;
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.base.LayerPerspective;
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.di.GraphNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.presentation.Connector;
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.presentation.Fig;
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.tigris.gef.presentation.FigNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;class&nbsp;FigExitPoint&nbsp;extends&nbsp;FigCircleState&nbsp;implements&nbsp;Connector&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;FigVertex&nbsp;node;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;FigExitPoint(Object&nbsp;owner,&nbsp;Rectangle&nbsp;bounds,&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DiagramSettings&nbsp;settings)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(owner,&nbsp;bounds,&nbsp;settings);
+</br></font><font color="red"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;GraphNode&nbsp;getGraphNode()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setGraphNode(GraphNode&nbsp;node)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.node&nbsp;=&nbsp;(FigVertex)&nbsp;node;
+</br></font><font color="red"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;setEnclosingFig(Fig&nbsp;encloser)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO:&nbsp;Note&nbsp;copy/paste&nbsp;code&nbsp;in&nbsp;FigEntryPoint&nbsp;-&nbsp;where&nbsp;is&nbsp;this&nbsp;code
+</br></font><font color="red"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;better&nbsp;placed&nbsp;in&nbsp;GEF?
+</br></font><font color="red"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LayerPerspective&nbsp;lp&nbsp;=&nbsp;(LayerPerspective)&nbsp;getLayer();
+</br></font><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(lp&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.setEnclosingFig(encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;vertex&nbsp;=&nbsp;((FigVertex)&nbsp;encloser);
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(vertex&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vertex.addConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FigVertex&nbsp;previousVertex&nbsp;=&nbsp;(FigVertex)&nbsp;getGraphNode();
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(previousVertex&nbsp;!=&nbsp;null)
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;previousVertex.removeConnector(this);
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	</div>
+</body>
+</html>
