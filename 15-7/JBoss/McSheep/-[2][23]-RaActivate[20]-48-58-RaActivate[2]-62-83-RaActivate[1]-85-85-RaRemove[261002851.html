@@ -1,0 +1,371 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/clones.css">
+  <title>McSheep - View of -[2][23]-RaActivate[20]-48-58-RaActivate[2]-62-83-RaActivate[1]-85-85-RaRemove[261002851</title>
+</head>
+<body>
+  <h1>McSheep - View of -[2][23]-RaActivate[20]-48-58-RaActivate[2]-62-83-RaActivate[1]-85-85-RaRemove[261002851</h1>
+   	<br><div style="overflow-x:auto">
+		<table id="tableid">
+		  	<tr>
+		    		<th>RaActivate
+		    		<th>RaRemove
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;address&nbsp;=&nbsp;operation.require(OP_ADDR);
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;idName&nbsp;=&nbsp;PathAddress.pathAddress(address).getLastElement().getValue();
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModelNode&nbsp;model&nbsp;=&nbsp;context.readResource(PathAddress.EMPTY_ADDRESS).getModel();
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;archiveOrModuleName;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!model.hasDefined(ARCHIVE.getName())&nbsp;&&&nbsp;!model.hasDefined(MODULE.getName()))&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;ConnectorLogger.ROOT_LOGGER.archiveOrModuleRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(ARCHIVE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(ARCHIVE.getName()).asString();
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(MODULE.getName()).asString();
+</br></font><font color="black"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;statsEnabled&nbsp;=&nbsp;STATISTICS_ENABLED.resolveModelAttribute(context,&nbsp;model).asBool...</br></font><font color="black"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.isNormalServer())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.addStep(new&nbsp;OperationStepHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;execute(final&nbsp;OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;throws&nbsp;Oper...</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;restartedServiceName&nbsp;=&nbsp;RaOperationUtil.restartIfPresent(context,&nbsp;arc...</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(restartedServiceName&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.activate(context,&nbsp;idName,&nbsp;archiveOrModuleName,&nbsp;statsEnabled)...</br></font><font color="red"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.completeStep(new&nbsp;OperationContext.RollbackHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;handleRollback(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.removeIfActive(context,&nbsp;archiveOrModuleName,&nbsp;idName)...</br></font><font color="red"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(OperationFailedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;OperationContext.Stage.RUNTIME);
+</br></font><font color="black"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.stepCompleted();
+</br></font>
+	        	<td><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;opAddr&nbsp;=&nbsp;operation.require(OP_ADDR);
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;idName&nbsp;=&nbsp;PathAddress.pathAddress(opAddr).getLastElement().getValue();
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Compensating&nbsp;is&nbsp;add
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;model&nbsp;=&nbsp;context.readResource(PathAddress.EMPTY_ADDRESS,&nbsp;false).getModel();
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;archiveOrModuleName;
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!model.hasDefined(ARCHIVE.getName())&nbsp;&&&nbsp;!model.hasDefined(MODULE.getName()))&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;ConnectorLogger.ROOT_LOGGER.archiveOrModuleRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(ARCHIVE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(ARCHIVE.getName()).asString();
+</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(MODULE.getName()).asString();
+</br></font><font color="black"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;compensating&nbsp;=&nbsp;Util.getEmptyOperation(ADD,&nbsp;opAddr);
+</br></font><font color="black"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.hasDefined(RESOURCEADAPTERS_NAME))&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(ModelNode&nbsp;raNode&nbsp;:&nbsp;model.get(RESOURCEADAPTERS_NAME).asList())&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModelNode&nbsp;raCompensatingNode&nbsp;=&nbsp;raNode.clone();
+</br></font><font color="black"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compensating.get(RESOURCEADAPTERS_NAME).add(raCompensatingNode);
+</br></font><font color="black"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeResource(PathAddress.EMPTY_ADDRESS);
+</br></font><font color="black"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.addStep(new&nbsp;OperationStepHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;execute(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;throws&nbsp;OperationFaile...</br></font><font color="red"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;wasActive;
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wasActive&nbsp;=&nbsp;RaOperationUtil.removeIfActive(context,&nbsp;archiveOrModuleName,&nbsp;idName);
+</br></font><font color="red"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(wasActive)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.reloadRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.completeStep(new&nbsp;OperationContext.RollbackHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;handleRollback(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.revertReloadRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</br></font><font color="red"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+</br></font><font color="red"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;raServiceName&nbsp;=&nbsp;ServiceName.of(ConnectorServices.RA_SERVICE,&nbsp;idName);
+</br></font><font color="red"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceController&lt;?&gt;&nbsp;serviceController&nbsp;=&nbsp;&nbsp;context.getServiceRegistry(false).getServi...</br></font><font color="red"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModifiableResourceAdapter&nbsp;resourceAdapter;
+</br></font><font color="red"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(serviceController&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceAdapter&nbsp;=&nbsp;(ModifiableResourceAdapter)&nbsp;serviceController.getValue();
+</br></font><font color="red"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceAdapter&nbsp;=&nbsp;null;
+</br></font><font color="red"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;List&lt;ServiceName&gt;&nbsp;serviceNameList&nbsp;=&nbsp;context.getServiceRegistry(false).getServi...</br></font><font color="red"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(ServiceName&nbsp;name&nbsp;:&nbsp;serviceNameList)&nbsp;{
+</br></font><font color="red"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raServiceName.isParentOf(name))&nbsp;{
+</br></font><font color="red"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(name);
+</br></font><font color="red"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(MODULE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//ServiceName&nbsp;deploymentServiceName&nbsp;=&nbsp;ConnectorServices.getDeploymentServiceName...</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//context.removeService(deploymentServiceName);
+</br></font><font color="red"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;deployerServiceName&nbsp;=&nbsp;ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SE...</br></font><font color="red"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(deployerServiceName);
+</br></font><font color="red"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;inactiveServiceName&nbsp;=&nbsp;ConnectorServices.INACTIVE_RESOURCE_ADAPTER_SE...</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(inactiveServiceName);
+</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(raServiceName);
+</br></font><font color="red"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.completeStep(new&nbsp;OperationContext.RollbackHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;handleRollback(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;{
+</br></font><font color="red"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(resourceAdapter&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;ServiceController&lt;?&gt;&gt;&nbsp;&nbsp;newControllers&nbsp;=&nbsp;new&nbsp;LinkedList&lt;ServiceContr...</br></font><font color="red"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(ARCHIVE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.installRaServices(context,&nbsp;idName,&nbsp;resourceAdapter,&nbsp;...</br></font><font color="red"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.installRaServicesAndDeployFromModule(context,&nbsp;id...</br></font><font color="red"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(OperationFailedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(wasActive){
+</br></font><font color="red"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.activate(context,&nbsp;idName,&nbsp;archiveOrModuleName,&nbsp;S...</br></font><font color="red"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;143.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(OperationFailedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;144.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;145.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;146.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;147.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;148.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;149.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</br></font><font color="red"><b>&nbsp;150.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;151.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;OperationContext.Stage.RUNTIME);
+</br></font><font color="red"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.stepCompleted();
+</br></font>
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2011,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.connector.subsystems.resourceadapters;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.logging.ConnectorLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationFailedException;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationStepHandler;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.PathAddress;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.dmr.ModelNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.ARCHIVE;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.MODULE;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.STATISTICS_ENABLED;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP_ADDR;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Operation&nbsp;handler&nbsp;responsible&nbsp;for&nbsp;disabling&nbsp;an&nbsp;existing&nbsp;data-source.
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Stefano&nbsp;Maestri
+</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;RaActivate&nbsp;implements&nbsp;OperationStepHandler&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;RaActivate&nbsp;INSTANCE&nbsp;=&nbsp;new&nbsp;RaActivate();
+</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;execute(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;&nbsp;throws&nbsp;OperationFailedExcept...</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;address&nbsp;=&nbsp;operation.require(OP_ADDR);
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;idName&nbsp;=&nbsp;PathAddress.pathAddress(address).getLastElement().getValue();
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModelNode&nbsp;model&nbsp;=&nbsp;context.readResource(PathAddress.EMPTY_ADDRESS).getModel();
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;archiveOrModuleName;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!model.hasDefined(ARCHIVE.getName())&nbsp;&&&nbsp;!model.hasDefined(MODULE.getName()))&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;ConnectorLogger.ROOT_LOGGER.archiveOrModuleRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(ARCHIVE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(ARCHIVE.getName()).asString();
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(MODULE.getName()).asString();
+</br></font><font color="black"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;statsEnabled&nbsp;=&nbsp;STATISTICS_ENABLED.resolveModelAttribute(context,&nbsp;model).asBool...</br></font><font color="black"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.isNormalServer())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.addStep(new&nbsp;OperationStepHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;execute(final&nbsp;OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;throws&nbsp;Oper...</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;restartedServiceName&nbsp;=&nbsp;RaOperationUtil.restartIfPresent(context,&nbsp;arc...</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(restartedServiceName&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.activate(context,&nbsp;idName,&nbsp;archiveOrModuleName,&nbsp;statsEnabled)...</br></font><font color="red"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.completeStep(new&nbsp;OperationContext.RollbackHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;handleRollback(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.removeIfActive(context,&nbsp;archiveOrModuleName,&nbsp;idName)...</br></font><font color="red"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(OperationFailedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;OperationContext.Stage.RUNTIME);
+</br></font><font color="black"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.stepCompleted();
+</br></font><font color="black"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2011,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.connector.subsystems.resourceadapters;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.ARCHIVE;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.MODULE;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.RESOURCEADAPTERS_NAME;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.subsystems.resourceadapters.Constants.STATISTICS_ENABLED;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants.ADD;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP_ADDR;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.LinkedList;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.List;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.logging.ConnectorLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.util.ConnectorServices;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationFailedException;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationStepHandler;
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.PathAddress;
+</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.operations.common.Util;
+</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.dmr.ModelNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceController;
+</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:stefano.maestri@redhat.com"&gt;Stefano
+</br></font><font color="black"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maestri&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;RaRemove&nbsp;implements&nbsp;OperationStepHandler&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;RaRemove&nbsp;INSTANCE&nbsp;=&nbsp;new&nbsp;RaRemove();
+</br></font><font color="black"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;execute(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;throws&nbsp;OperationFailedExcepti...</br></font><font color="black"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;opAddr&nbsp;=&nbsp;operation.require(OP_ADDR);
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;idName&nbsp;=&nbsp;PathAddress.pathAddress(opAddr).getLastElement().getValue();
+</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Compensating&nbsp;is&nbsp;add
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;model&nbsp;=&nbsp;context.readResource(PathAddress.EMPTY_ADDRESS,&nbsp;false).getModel();
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;archiveOrModuleName;
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!model.hasDefined(ARCHIVE.getName())&nbsp;&&&nbsp;!model.hasDefined(MODULE.getName()))&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;ConnectorLogger.ROOT_LOGGER.archiveOrModuleRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(ARCHIVE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(ARCHIVE.getName()).asString();
+</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;archiveOrModuleName&nbsp;=&nbsp;model.get(MODULE.getName()).asString();
+</br></font><font color="black"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;compensating&nbsp;=&nbsp;Util.getEmptyOperation(ADD,&nbsp;opAddr);
+</br></font><font color="black"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.hasDefined(RESOURCEADAPTERS_NAME))&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(ModelNode&nbsp;raNode&nbsp;:&nbsp;model.get(RESOURCEADAPTERS_NAME).asList())&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModelNode&nbsp;raCompensatingNode&nbsp;=&nbsp;raNode.clone();
+</br></font><font color="black"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compensating.get(RESOURCEADAPTERS_NAME).add(raCompensatingNode);
+</br></font><font color="black"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeResource(PathAddress.EMPTY_ADDRESS);
+</br></font><font color="black"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.addStep(new&nbsp;OperationStepHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;execute(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;throws&nbsp;OperationFaile...</br></font><font color="red"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;wasActive;
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wasActive&nbsp;=&nbsp;RaOperationUtil.removeIfActive(context,&nbsp;archiveOrModuleName,&nbsp;idName);
+</br></font><font color="red"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(wasActive)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.reloadRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.completeStep(new&nbsp;OperationContext.RollbackHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;handleRollback(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.revertReloadRequired();
+</br></font><font color="red"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</br></font><font color="red"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;
+</br></font><font color="red"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;raServiceName&nbsp;=&nbsp;ServiceName.of(ConnectorServices.RA_SERVICE,&nbsp;idName);
+</br></font><font color="red"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceController&lt;?&gt;&nbsp;serviceController&nbsp;=&nbsp;&nbsp;context.getServiceRegistry(false).getServi...</br></font><font color="red"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModifiableResourceAdapter&nbsp;resourceAdapter;
+</br></font><font color="red"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(serviceController&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceAdapter&nbsp;=&nbsp;(ModifiableResourceAdapter)&nbsp;serviceController.getValue();
+</br></font><font color="red"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceAdapter&nbsp;=&nbsp;null;
+</br></font><font color="red"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;List&lt;ServiceName&gt;&nbsp;serviceNameList&nbsp;=&nbsp;context.getServiceRegistry(false).getServi...</br></font><font color="red"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(ServiceName&nbsp;name&nbsp;:&nbsp;serviceNameList)&nbsp;{
+</br></font><font color="red"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raServiceName.isParentOf(name))&nbsp;{
+</br></font><font color="red"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(name);
+</br></font><font color="red"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(MODULE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//ServiceName&nbsp;deploymentServiceName&nbsp;=&nbsp;ConnectorServices.getDeploymentServiceName...</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//context.removeService(deploymentServiceName);
+</br></font><font color="red"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;deployerServiceName&nbsp;=&nbsp;ConnectorServices.RESOURCE_ADAPTER_DEPLOYER_SE...</br></font><font color="red"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(deployerServiceName);
+</br></font><font color="red"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;inactiveServiceName&nbsp;=&nbsp;ConnectorServices.INACTIVE_RESOURCE_ADAPTER_SE...</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(inactiveServiceName);
+</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.removeService(raServiceName);
+</br></font><font color="red"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.completeStep(new&nbsp;OperationContext.RollbackHandler()&nbsp;{
+</br></font><font color="red"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;handleRollback(OperationContext&nbsp;context,&nbsp;ModelNode&nbsp;operation)&nbsp;{
+</br></font><font color="red"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(resourceAdapter&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;ServiceController&lt;?&gt;&gt;&nbsp;&nbsp;newControllers&nbsp;=&nbsp;new&nbsp;LinkedList&lt;ServiceContr...</br></font><font color="red"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.get(ARCHIVE.getName()).isDefined())&nbsp;{
+</br></font><font color="red"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.installRaServices(context,&nbsp;idName,&nbsp;resourceAdapter,&nbsp;...</br></font><font color="red"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="red"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.installRaServicesAndDeployFromModule(context,&nbsp;id...</br></font><font color="red"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(OperationFailedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(wasActive){
+</br></font><font color="red"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RaOperationUtil.activate(context,&nbsp;idName,&nbsp;archiveOrModuleName,&nbsp;S...</br></font><font color="red"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;143.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(OperationFailedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;144.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;145.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;146.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;147.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;148.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;149.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+</br></font><font color="red"><b>&nbsp;150.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;151.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},&nbsp;OperationContext.Stage.RUNTIME);
+</br></font><font color="red"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.stepCompleted();
+</br></font><font color="black"><b>&nbsp;153.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;154.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+		  </tr>
+  		</table>
+  		</div>
+</body>
+</html>

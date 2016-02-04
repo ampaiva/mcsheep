@@ -1,0 +1,642 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/clones.css">
+  <title>McSheep - View of -[2][15]-MessagingExtension[3]-152-156-MessagingExtension[9]-216-221-MessagingEx1810087381</title>
+</head>
+<body>
+  <h1>McSheep - View of -[2][15]-MessagingExtension[3]-152-156-MessagingExtension[9]-216-221-MessagingEx1810087381</h1>
+   	<br><div style="overflow-x:auto">
+		<table id="tableid">
+		  	<tr>
+		    		<th>MessagingExtension
+		    		<th>TransactionExtension
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="red"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;registerRuntimeOnly&nbsp;=&nbsp;context.isRuntimeOnlyRegistrationValid();
+</br></font><font color="red"><b>&nbsp;153.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;154.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Root&nbsp;resource
+</br></font><font color="red"><b>&nbsp;155.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;rootRegistration&nbsp;=&nbsp;subsystem.registerSubsystemModel(Mes...</br></font><font color="red"><b>&nbsp;156.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootRegistration.registerOperationHandler(GenericSubsystemDescribeHandler.DEFINITION,&nbsp;Generi...</br></font><font color="black"><b>&nbsp;157.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;158.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;HQ&nbsp;servers
+</br></font><font color="black"><b>&nbsp;159.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;serverRegistration&nbsp;=&nbsp;rootRegistration.registerSubModel(...</br></font><font color="black"><b>&nbsp;160.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;161.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Runtime&nbsp;addresses
+</br></font><font color="black"><b>&nbsp;162.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(registerRuntimeOnly)&nbsp;{
+</br></font><font color="black"><b>&nbsp;163.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;coreAddress&nbsp;=&nbsp;serverRegistration.registerSubModel(n...</br></font><font color="black"><b>&nbsp;164.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coreAddress.setRuntimeOnly(true);
+</br></font><font color="black"><b>&nbsp;165.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;166.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;167.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Address&nbsp;settings
+</br></font><font color="black"><b>&nbsp;168.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;AddressSettingDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;169.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;170.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Broadcast&nbsp;groups
+</br></font><font color="black"><b>&nbsp;171.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;BroadcastGroupDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;172.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getConnectorPairs,&nbsp;--&nbsp;no,&nbsp;this&nbsp;is&nbsp;just&nbsp;the&nbsp;same&nbsp;as&nbsp;attribute&nbsp;connector-refs
+</br></font><font color="black"><b>&nbsp;173.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;174.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Discovery&nbsp;groups
+</br></font><font color="black"><b>&nbsp;175.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;DiscoveryGroupDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;176.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;177.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Diverts
+</br></font><font color="black"><b>&nbsp;178.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;DivertDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;179.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;180.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Core&nbsp;queues
+</br></font><font color="black"><b>&nbsp;181.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(QueueDefinition.newQueueDefinition(registerRuntimeOnly))...</br></font><font color="black"><b>&nbsp;182.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getExpiryAddress,&nbsp;setExpiryAddress,&nbsp;getDeadLetterAddress,&nbsp;setDeadLetterAddress&nbsp;&nbsp;--&nbsp;no&nbsp;--&nbsp;...</br></font><font color="black"><b>&nbsp;183.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;184.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Runtime&nbsp;core&nbsp;queues
+</br></font><font color="black"><b>&nbsp;185.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(QueueDefinition.newRuntimeQueueDefinition(registerRuntim...</br></font><font color="black"><b>&nbsp;186.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;187.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Acceptors
+</br></font><font color="black"><b>&nbsp;188.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;HTTPAcceptorDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;189.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(GenericTransportDefinition.createAcceptorDefinition(regi...</br></font><font color="black"><b>&nbsp;190.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(RemoteTransportDefinition.createAcceptorDefinition(regis...</br></font><font color="black"><b>&nbsp;191.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(InVMTransportDefinition.createAcceptorDefinition(registe...</br></font><font color="black"><b>&nbsp;192.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;193.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Connectors
+</br></font><font color="black"><b>&nbsp;194.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;HTTPConnectorDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;195.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(GenericTransportDefinition.createConnectorDefinition(reg...</br></font><font color="black"><b>&nbsp;196.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(RemoteTransportDefinition.createConnectorDefinition(regi...</br></font><font color="black"><b>&nbsp;197.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(InVMTransportDefinition.createConnectorDefinition(regist...</br></font><font color="black"><b>&nbsp;198.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;199.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Bridges
+</br></font><font color="black"><b>&nbsp;200.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;BridgeDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;201.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;202.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Cluster&nbsp;connections
+</br></font><font color="black"><b>&nbsp;203.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;ClusterConnectionDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;204.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;205.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Grouping&nbsp;Handler
+</br></font><font color="black"><b>&nbsp;206.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;GroupingHandlerDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;207.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;208.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Connector&nbsp;services
+</br></font><font color="black"><b>&nbsp;209.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;ConnectorServiceDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;210.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;211.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Messaging&nbsp;paths
+</br></font><font color="black"><b>&nbsp;212.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//todo,&nbsp;shouldn't&nbsp;we&nbsp;leverage&nbsp;Path&nbsp;service&nbsp;from&nbsp;AS?&nbsp;see:&nbsp;package&nbsp;org.jboss.as.controller.ser...</br></font><font color="black"><b>&nbsp;213.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(final&nbsp;String&nbsp;path&nbsp;:&nbsp;PathDefinition.PATHS.keySet())&nbsp;{
+</br></font><font color="black"><b>&nbsp;214.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManagementResourceRegistration&nbsp;binding&nbsp;=&nbsp;serverRegistration.registerSubModel(new&nbsp;PathDef...</br></font><font color="black"><b>&nbsp;215.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create&nbsp;the&nbsp;path&nbsp;resolver&nbsp;operation
+</br></font><font color="red"><b>&nbsp;216.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.getProcessType().isServer())&nbsp;{
+</br></font><font color="red"><b>&nbsp;217.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResolvePathHandler&nbsp;resolvePathHandler&nbsp;=&nbsp;ResolvePathHandler.Builder.of(context....</br></font><font color="red"><b>&nbsp;218.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setPathAttribute(PathDefinition.PATHS.get(path))
+</br></font><font color="red"><b>&nbsp;219.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setRelativeToAttribute(PathDefinition.RELATIVE_TO)
+</br></font><font color="red"><b>&nbsp;220.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();
+</br></font><font color="red"><b>&nbsp;221.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.registerOperationHandler(resolvePathHandler.getOperationDefinition(),&nbsp;resolv...</br></font><font color="black"><b>&nbsp;222.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;223.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;224.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;225.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Connection&nbsp;factories
+</br></font><font color="red"><b>&nbsp;226.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;ConnectionFactoryDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;227.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getJNDIBindings&nbsp;(no&nbsp;--&nbsp;same&nbsp;as&nbsp;"entries")
+</br></font><font color="black"><b>&nbsp;228.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;229.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Resource&nbsp;Adapter&nbsp;Pooled&nbsp;connection&nbsp;factories
+</br></font><font color="red"><b>&nbsp;230.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;PooledConnectionFactoryDefinition(registerRuntimeOnl...</br></font><font color="black"><b>&nbsp;231.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;how&nbsp;do&nbsp;ConnectionFactoryControl&nbsp;things&nbsp;relate?
+</br></font><font color="black"><b>&nbsp;232.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;233.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;JMS&nbsp;Queues
+</br></font><font color="black"><b>&nbsp;234.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;JMSQueueDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;235.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;setExpiryAddress,&nbsp;setDeadLetterAddress&nbsp;&nbsp;--&nbsp;no&nbsp;--&nbsp;just&nbsp;toggle&nbsp;the&nbsp;'queue-address',&nbsp;make&nbsp;th...</br></font><font color="black"><b>&nbsp;236.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getJNDIBindings&nbsp;(no&nbsp;--&nbsp;same&nbsp;as&nbsp;"entries")
+</br></font><font color="black"><b>&nbsp;237.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;238.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;JMS&nbsp;Topics
+</br></font><font color="black"><b>&nbsp;239.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;JMSTopicDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;240.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getJNDIBindings&nbsp;(no&nbsp;--&nbsp;same&nbsp;as&nbsp;"entries")
+</br></font><font color="black"><b>&nbsp;241.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;242.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;SecuritySettingDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;243.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;244.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(registerRuntimeOnly)&nbsp;{
+</br></font><font color="black"><b>&nbsp;245.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;246.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ResourceDefinition&nbsp;deploymentsDef&nbsp;=&nbsp;new&nbsp;SimpleResourceDefinition(SUBSYSTEM_PATH,&nbsp;getReso...</br></font><font color="black"><b>&nbsp;247.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;deploymentsRegistration&nbsp;=&nbsp;subsystem.registerDeploym...</br></font><font color="black"><b>&nbsp;248.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;serverModel&nbsp;=&nbsp;deploymentsRegistration.registerSubMo...</br></font><font color="black"><b>&nbsp;249.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;250.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverModel.registerSubModel(JMSQueueDefinition.newDeployedJMSQueueDefinition());
+</br></font><font color="black"><b>&nbsp;251.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverModel.registerSubModel(JMSTopicDefinition.newDeployedJMSTopicDefinition());
+</br></font><font color="black"><b>&nbsp;252.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverModel.registerSubModel(new&nbsp;PooledConnectionFactoryDefinition(true,&nbsp;true));
+</br></font><font color="black"><b>&nbsp;253.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;254.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;255.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;JMS&nbsp;Bridges
+</br></font><font color="black"><b>&nbsp;256.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootRegistration.registerSubModel(new&nbsp;JMSBridgeDefinition());
+</br></font><font color="black"><b>&nbsp;257.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;258.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.isRegisterTransformers())&nbsp;{
+</br></font><font color="red"><b>&nbsp;259.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessagingTransformers.registerTransformers(subsystem);
+</br></font>
+	        	<td><font color="red"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;registerRuntimeOnly&nbsp;=&nbsp;context.isRuntimeOnlyRegistrationValid();
+</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;SubsystemRegistration&nbsp;subsystem&nbsp;=&nbsp;context.registerSubsystem(SUBSYSTEM_NAME,&nbsp;CURRENT_MO...</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;TransactionSubsystemRootResourceDefinition&nbsp;rootResourceDefinition&nbsp;=&nbsp;new&nbsp;TransactionSub...</br></font><font color="red"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;registration&nbsp;=&nbsp;subsystem.registerSubsystemModel(rootRes...</br></font><font color="red"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registration.registerOperationHandler(GenericSubsystemDescribeHandler.DEFINITION,&nbsp;GenericSub...</br></font><font color="red"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create&nbsp;the&nbsp;path&nbsp;resolver&nbsp;handlers
+</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.getProcessType().isServer())&nbsp;{
+</br></font><font color="red"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;It's&nbsp;less&nbsp;than&nbsp;ideal&nbsp;to&nbsp;create&nbsp;a&nbsp;separate&nbsp;operation&nbsp;here,&nbsp;but&nbsp;this&nbsp;extension&nbsp;contains...</br></font><font color="red"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResolvePathHandler&nbsp;objectStorePathHandler&nbsp;=&nbsp;ResolvePathHandler.Builder.of(RESOLVE_...</br></font><font color="red"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setPathAttribute(TransactionSubsystemRootResourceDefinition.OBJECT_STORE_PATH)
+</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setRelativeToAttribute(TransactionSubsystemRootResourceDefinition.OBJECT_STORE_R...</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registration.registerOperationHandler(objectStorePathHandler.getOperationDefinition(),&nbsp;o...</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResolvePathHandler&nbsp;resolvePathHandler&nbsp;=&nbsp;ResolvePathHandler.Builder.of(context.getP...</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setPathAttribute(TransactionSubsystemRootResourceDefinition.PATH)
+</br></font><font color="black"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setRelativeToAttribute(TransactionSubsystemRootResourceDefinition.RELATIVE_TO)
+</br></font><font color="black"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setDeprecated(ModelVersion.create(1,4))
+</br></font><font color="black"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registration.registerOperationHandler(resolvePathHandler.getOperationDefinition(),&nbsp;resol...</br></font><font color="black"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManagementResourceRegistration&nbsp;logStoreChild&nbsp;=&nbsp;registration.registerSubModel(new&nbsp;LogStoreDef...</br></font><font color="black"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(registerRuntimeOnly)&nbsp;{
+</br></font><font color="red"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManagementResourceRegistration&nbsp;transactionChild&nbsp;=&nbsp;logStoreChild.registerSubModel(new&nbsp;Log...</br></font><font color="black"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transactionChild.registerSubModel(LogStoreTransactionParticipantDefinition.INSTANCE);
+</br></font><font color="black"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystem.registerXMLElementWriter(TransactionSubsystemXMLPersister.INSTANCE);
+</br></font><font color="black"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.isRegisterTransformers())&nbsp;{
+</br></font><font color="black"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Register&nbsp;the&nbsp;model&nbsp;transformers
+</br></font><font color="red"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registerTransformers(subsystem);
+</br></font>
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2010,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.messaging;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.PathElement.pathElement;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants.SUBSYSTEM;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_1_0;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_1_1;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_1_2;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_1_3;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_1_4;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_2_0;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.messaging.Namespace.MESSAGING_3_0;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.DeprecationData;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.Extension;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.ExtensionContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.ModelVersion;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.PathElement;
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.ResourceDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.SimpleResourceDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.SubsystemRegistration;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.descriptions.DeprecatedResourceDescriptionResolver;
+</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants;
+</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.descriptions.ResourceDescriptionResolver;
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.operations.common.GenericSubsystemDescribeHandler;
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.parsing.ExtensionParsingContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.registry.ManagementResourceRegistration;
+</br></font><font color="black"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.services.path.ResolvePathHandler;
+</br></font><font color="black"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.messaging.jms.ConnectionFactoryDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.messaging.jms.JMSQueueDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.messaging.jms.JMSTopicDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.messaging.jms.PooledConnectionFactoryDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.messaging.jms.bridge.JMSBridgeDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Domain&nbsp;extension&nbsp;that&nbsp;integrates&nbsp;HornetQ.
+</br></font><font color="black"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&lt;dl&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;&lt;strong&gt;Current&lt;/strong&gt;&nbsp;-&nbsp;WildFly&nbsp;9&lt;/dt&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:3.0
+</br></font><font color="black"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;3.0.0
+</br></font><font color="black"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;WildFly&nbsp;8.1.0&lt;/dt&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:2.0
+</br></font><font color="black"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;2.1.0
+</br></font><font color="black"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;WildFly&nbsp;8.0.0&lt;/dt&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:2.0
+</br></font><font color="black"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;2.0.0
+</br></font><font color="black"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;AS&nbsp;7.3.0&lt;/dt&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:1.4
+</br></font><font color="black"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;1.3.0
+</br></font><font color="black"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;AS&nbsp;7.2.1&lt;/dt&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:1.3
+</br></font><font color="black"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;1.2.1
+</br></font><font color="black"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;AS&nbsp;7.2.0&lt;/dt&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:1.3
+</br></font><font color="black"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;1.2.0
+</br></font><font color="black"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dt&gt;AS&nbsp;7.1.2,&nbsp;7.1.3&lt;dt&gt;
+</br></font><font color="black"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;dd&gt;
+</br></font><font color="black"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+</br></font><font color="black"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;XML&nbsp;namespace:&nbsp;urn:jboss:domain:messaging:1.2
+</br></font><font color="black"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Management&nbsp;model:&nbsp;1.1.0
+</br></font><font color="black"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&lt;/dd&gt;
+</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&lt;/dl&gt;
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Emanuel&nbsp;Muckenhuber
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:andy.taylor@jboss.com"&gt;Andy&nbsp;Taylor&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Brian&nbsp;Stansberry&nbsp;(c)&nbsp;2011&nbsp;Red&nbsp;Hat&nbsp;Inc.
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;MessagingExtension&nbsp;implements&nbsp;Extension&nbsp;{
+</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;SUBSYSTEM_NAME&nbsp;=&nbsp;"messaging";
+</br></font><font color="black"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;PathElement&nbsp;SUBSYSTEM_PATH&nbsp;&nbsp;=&nbsp;pathElement(SUBSYSTEM,&nbsp;SUBSYSTEM_NAME);
+</br></font><font color="black"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;String&nbsp;RESOURCE_NAME&nbsp;=&nbsp;MessagingExtension.class.getPackage().getName()&nbsp;+&nbsp;".LocalDes...</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;CURRENT_MODEL_VERSION&nbsp;=&nbsp;ModelVersion.create(3,&nbsp;0,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;VERSION_2_1_0&nbsp;=&nbsp;ModelVersion.create(2,&nbsp;1,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;VERSION_2_0_0&nbsp;=&nbsp;ModelVersion.create(2,&nbsp;0,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;VERSION_1_3_0&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;3,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;VERSION_1_2_1&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;2,&nbsp;1);
+</br></font><font color="black"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;VERSION_1_2_0&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;2,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;VERSION_1_1_0&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;1,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;DEPRECATED_SINCE&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;4,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;ResourceDescriptionResolver&nbsp;getResourceDescriptionResolver(final&nbsp;String...&nbsp;keyPref...</br></font><font color="black"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;getResourceDescriptionResolver(true,&nbsp;keyPrefix);
+</br></font><font color="black"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;ResourceDescriptionResolver&nbsp;getResourceDescriptionResolver(final&nbsp;boolean&nbsp;useUnpref...</br></font><font color="black"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuilder&nbsp;prefix&nbsp;=&nbsp;new&nbsp;StringBuilder();
+</br></font><font color="black"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(String&nbsp;kp&nbsp;:&nbsp;keyPrefix)&nbsp;{
+</br></font><font color="black"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(prefix.length()&nbsp;&gt;&nbsp;0){
+</br></font><font color="black"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prefix.append('.');
+</br></font><font color="black"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;143.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prefix.append(kp);
+</br></font><font color="black"><b>&nbsp;144.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;145.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;DeprecatedResourceDescriptionResolver(SUBSYSTEM_NAME,&nbsp;prefix.toString(),&nbsp;RESOURCE...</br></font><font color="black"><b>&nbsp;146.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;147.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;148.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;initialize(ExtensionContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;149.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;SubsystemRegistration&nbsp;subsystem&nbsp;=&nbsp;context.registerSubsystem(SUBSYSTEM_NAME,&nbsp;CURRENT_MO...</br></font><font color="black"><b>&nbsp;150.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystem.registerXMLElementWriter(MessagingXMLWriter.INSTANCE);
+</br></font><font color="black"><b>&nbsp;151.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;registerRuntimeOnly&nbsp;=&nbsp;context.isRuntimeOnlyRegistrationValid();
+</br></font><font color="red"><b>&nbsp;153.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;154.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Root&nbsp;resource
+</br></font><font color="red"><b>&nbsp;155.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;rootRegistration&nbsp;=&nbsp;subsystem.registerSubsystemModel(Mes...</br></font><font color="red"><b>&nbsp;156.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootRegistration.registerOperationHandler(GenericSubsystemDescribeHandler.DEFINITION,&nbsp;Generi...</br></font><font color="black"><b>&nbsp;157.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;158.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;HQ&nbsp;servers
+</br></font><font color="black"><b>&nbsp;159.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;serverRegistration&nbsp;=&nbsp;rootRegistration.registerSubModel(...</br></font><font color="black"><b>&nbsp;160.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;161.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Runtime&nbsp;addresses
+</br></font><font color="black"><b>&nbsp;162.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(registerRuntimeOnly)&nbsp;{
+</br></font><font color="black"><b>&nbsp;163.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;coreAddress&nbsp;=&nbsp;serverRegistration.registerSubModel(n...</br></font><font color="black"><b>&nbsp;164.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coreAddress.setRuntimeOnly(true);
+</br></font><font color="black"><b>&nbsp;165.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;166.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;167.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Address&nbsp;settings
+</br></font><font color="black"><b>&nbsp;168.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;AddressSettingDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;169.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;170.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Broadcast&nbsp;groups
+</br></font><font color="black"><b>&nbsp;171.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;BroadcastGroupDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;172.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getConnectorPairs,&nbsp;--&nbsp;no,&nbsp;this&nbsp;is&nbsp;just&nbsp;the&nbsp;same&nbsp;as&nbsp;attribute&nbsp;connector-refs
+</br></font><font color="black"><b>&nbsp;173.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;174.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Discovery&nbsp;groups
+</br></font><font color="black"><b>&nbsp;175.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;DiscoveryGroupDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;176.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;177.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Diverts
+</br></font><font color="black"><b>&nbsp;178.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;DivertDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;179.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;180.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Core&nbsp;queues
+</br></font><font color="black"><b>&nbsp;181.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(QueueDefinition.newQueueDefinition(registerRuntimeOnly))...</br></font><font color="black"><b>&nbsp;182.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getExpiryAddress,&nbsp;setExpiryAddress,&nbsp;getDeadLetterAddress,&nbsp;setDeadLetterAddress&nbsp;&nbsp;--&nbsp;no&nbsp;--&nbsp;...</br></font><font color="black"><b>&nbsp;183.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;184.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Runtime&nbsp;core&nbsp;queues
+</br></font><font color="black"><b>&nbsp;185.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(QueueDefinition.newRuntimeQueueDefinition(registerRuntim...</br></font><font color="black"><b>&nbsp;186.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;187.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Acceptors
+</br></font><font color="black"><b>&nbsp;188.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;HTTPAcceptorDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;189.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(GenericTransportDefinition.createAcceptorDefinition(regi...</br></font><font color="black"><b>&nbsp;190.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(RemoteTransportDefinition.createAcceptorDefinition(regis...</br></font><font color="black"><b>&nbsp;191.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(InVMTransportDefinition.createAcceptorDefinition(registe...</br></font><font color="black"><b>&nbsp;192.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;193.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Connectors
+</br></font><font color="black"><b>&nbsp;194.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;HTTPConnectorDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;195.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(GenericTransportDefinition.createConnectorDefinition(reg...</br></font><font color="black"><b>&nbsp;196.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(RemoteTransportDefinition.createConnectorDefinition(regi...</br></font><font color="black"><b>&nbsp;197.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(InVMTransportDefinition.createConnectorDefinition(regist...</br></font><font color="black"><b>&nbsp;198.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;199.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Bridges
+</br></font><font color="black"><b>&nbsp;200.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;BridgeDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;201.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;202.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Cluster&nbsp;connections
+</br></font><font color="black"><b>&nbsp;203.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;ClusterConnectionDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;204.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;205.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Grouping&nbsp;Handler
+</br></font><font color="black"><b>&nbsp;206.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;GroupingHandlerDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;207.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;208.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Connector&nbsp;services
+</br></font><font color="black"><b>&nbsp;209.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;ConnectorServiceDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;210.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;211.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Messaging&nbsp;paths
+</br></font><font color="black"><b>&nbsp;212.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//todo,&nbsp;shouldn't&nbsp;we&nbsp;leverage&nbsp;Path&nbsp;service&nbsp;from&nbsp;AS?&nbsp;see:&nbsp;package&nbsp;org.jboss.as.controller.ser...</br></font><font color="black"><b>&nbsp;213.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(final&nbsp;String&nbsp;path&nbsp;:&nbsp;PathDefinition.PATHS.keySet())&nbsp;{
+</br></font><font color="black"><b>&nbsp;214.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManagementResourceRegistration&nbsp;binding&nbsp;=&nbsp;serverRegistration.registerSubModel(new&nbsp;PathDef...</br></font><font color="black"><b>&nbsp;215.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create&nbsp;the&nbsp;path&nbsp;resolver&nbsp;operation
+</br></font><font color="red"><b>&nbsp;216.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.getProcessType().isServer())&nbsp;{
+</br></font><font color="red"><b>&nbsp;217.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResolvePathHandler&nbsp;resolvePathHandler&nbsp;=&nbsp;ResolvePathHandler.Builder.of(context....</br></font><font color="red"><b>&nbsp;218.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setPathAttribute(PathDefinition.PATHS.get(path))
+</br></font><font color="red"><b>&nbsp;219.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setRelativeToAttribute(PathDefinition.RELATIVE_TO)
+</br></font><font color="red"><b>&nbsp;220.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();
+</br></font><font color="red"><b>&nbsp;221.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding.registerOperationHandler(resolvePathHandler.getOperationDefinition(),&nbsp;resolv...</br></font><font color="black"><b>&nbsp;222.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;223.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;224.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;225.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Connection&nbsp;factories
+</br></font><font color="red"><b>&nbsp;226.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;ConnectionFactoryDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;227.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getJNDIBindings&nbsp;(no&nbsp;--&nbsp;same&nbsp;as&nbsp;"entries")
+</br></font><font color="black"><b>&nbsp;228.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;229.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Resource&nbsp;Adapter&nbsp;Pooled&nbsp;connection&nbsp;factories
+</br></font><font color="red"><b>&nbsp;230.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;PooledConnectionFactoryDefinition(registerRuntimeOnl...</br></font><font color="black"><b>&nbsp;231.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;how&nbsp;do&nbsp;ConnectionFactoryControl&nbsp;things&nbsp;relate?
+</br></font><font color="black"><b>&nbsp;232.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;233.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;JMS&nbsp;Queues
+</br></font><font color="black"><b>&nbsp;234.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;JMSQueueDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;235.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;setExpiryAddress,&nbsp;setDeadLetterAddress&nbsp;&nbsp;--&nbsp;no&nbsp;--&nbsp;just&nbsp;toggle&nbsp;the&nbsp;'queue-address',&nbsp;make&nbsp;th...</br></font><font color="black"><b>&nbsp;236.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getJNDIBindings&nbsp;(no&nbsp;--&nbsp;same&nbsp;as&nbsp;"entries")
+</br></font><font color="black"><b>&nbsp;237.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;238.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;JMS&nbsp;Topics
+</br></font><font color="black"><b>&nbsp;239.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;JMSTopicDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;240.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;getJNDIBindings&nbsp;(no&nbsp;--&nbsp;same&nbsp;as&nbsp;"entries")
+</br></font><font color="black"><b>&nbsp;241.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;242.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverRegistration.registerSubModel(new&nbsp;SecuritySettingDefinition(registerRuntimeOnly));
+</br></font><font color="black"><b>&nbsp;243.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;244.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(registerRuntimeOnly)&nbsp;{
+</br></font><font color="black"><b>&nbsp;245.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;246.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ResourceDefinition&nbsp;deploymentsDef&nbsp;=&nbsp;new&nbsp;SimpleResourceDefinition(SUBSYSTEM_PATH,&nbsp;getReso...</br></font><font color="black"><b>&nbsp;247.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;deploymentsRegistration&nbsp;=&nbsp;subsystem.registerDeploym...</br></font><font color="black"><b>&nbsp;248.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;serverModel&nbsp;=&nbsp;deploymentsRegistration.registerSubMo...</br></font><font color="black"><b>&nbsp;249.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;250.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverModel.registerSubModel(JMSQueueDefinition.newDeployedJMSQueueDefinition());
+</br></font><font color="black"><b>&nbsp;251.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverModel.registerSubModel(JMSTopicDefinition.newDeployedJMSTopicDefinition());
+</br></font><font color="black"><b>&nbsp;252.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;serverModel.registerSubModel(new&nbsp;PooledConnectionFactoryDefinition(true,&nbsp;true));
+</br></font><font color="black"><b>&nbsp;253.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;254.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;255.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;JMS&nbsp;Bridges
+</br></font><font color="black"><b>&nbsp;256.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rootRegistration.registerSubModel(new&nbsp;JMSBridgeDefinition());
+</br></font><font color="black"><b>&nbsp;257.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;258.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.isRegisterTransformers())&nbsp;{
+</br></font><font color="red"><b>&nbsp;259.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MessagingTransformers.registerTransformers(subsystem);
+</br></font><font color="black"><b>&nbsp;260.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;261.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;262.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;263.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;initializeParsers(ExtensionParsingContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;264.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_1_0.getUriString(),&nbsp;MessagingSubsys...</br></font><font color="black"><b>&nbsp;265.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_1_1.getUriString(),&nbsp;MessagingSubsys...</br></font><font color="black"><b>&nbsp;266.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_1_2.getUriString(),&nbsp;Messaging12Subs...</br></font><font color="black"><b>&nbsp;267.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_1_3.getUriString(),&nbsp;Messaging13Subs...</br></font><font color="black"><b>&nbsp;268.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_1_4.getUriString(),&nbsp;Messaging14Subs...</br></font><font color="black"><b>&nbsp;269.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_2_0.getUriString(),&nbsp;Messaging20Subs...</br></font><font color="black"><b>&nbsp;270.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;MESSAGING_3_0.getUriString(),&nbsp;Messaging30Subs...</br></font><font color="black"><b>&nbsp;271.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;272.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2010,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.txn.subsystem;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants.ADD;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants.OP;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.Map;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.management.MBeanServer;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.Extension;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.ExtensionContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.ModelVersion;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.OperationContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.PathAddress;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.PathElement;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.SubsystemRegistration;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.descriptions.ModelDescriptionConstants;
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.descriptions.StandardResourceDescriptionResolver;
+</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.operations.common.GenericSubsystemDescribeHandler;
+</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.parsing.ExtensionParsingContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.registry.ManagementResourceRegistration;
+</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.services.path.ResolvePathHandler;
+</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.TransformationContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.description.AttributeConverter;
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.description.DiscardAttributeChecker;
+</br></font><font color="black"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.description.RejectAttributeChecker;
+</br></font><font color="black"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.description.ResourceTransformationDescriptionBuilder;
+</br></font><font color="black"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.description.TransformationDescription;
+</br></font><font color="black"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.controller.transform.description.TransformationDescriptionBuilder;
+</br></font><font color="black"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.txn.logging.TransactionLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.dmr.ModelNode;
+</br></font><font color="black"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceController;
+</br></font><font color="black"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceRegistry;
+</br></font><font color="black"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;transaction&nbsp;management&nbsp;extension.
+</br></font><font color="black"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:david.lloyd@redhat.com"&gt;David&nbsp;M.&nbsp;Lloyd&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Emanuel&nbsp;Muckenhuber
+</br></font><font color="black"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Scott&nbsp;Stark&nbsp;(sstark@redhat.com)&nbsp;(C)&nbsp;2011&nbsp;Red&nbsp;Hat&nbsp;Inc.
+</br></font><font color="black"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Mike&nbsp;Musgrove&nbsp;(mmusgrov@redhat.com)&nbsp;(C)&nbsp;2012&nbsp;Red&nbsp;Hat&nbsp;Inc.
+</br></font><font color="black"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;TransactionExtension&nbsp;implements&nbsp;Extension&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;SUBSYSTEM_NAME&nbsp;=&nbsp;"transactions";
+</br></font><font color="black"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;operation&nbsp;name&nbsp;to&nbsp;resolve&nbsp;the&nbsp;object&nbsp;store&nbsp;path
+</br></font><font color="black"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;final&nbsp;String&nbsp;RESOLVE_OBJECT_STORE_PATH&nbsp;=&nbsp;"resolve-object-store-path";
+</br></font><font color="black"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;String&nbsp;RESOURCE_NAME&nbsp;=&nbsp;TransactionExtension.class.getPackage().getName()&nbsp;+&nbsp;...</br></font><font color="black"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;ModelVersion&nbsp;CURRENT_MODEL_VERSION&nbsp;=&nbsp;ModelVersion.create(3,&nbsp;0,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;ServiceName&nbsp;MBEAN_SERVER_SERVICE_NAME&nbsp;=&nbsp;ServiceName.JBOSS.append("mbean",&nbsp;"...</br></font><font color="black"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;PathElement&nbsp;LOG_STORE_PATH&nbsp;=&nbsp;PathElement.pathElement(LogStoreConstants.LOG_STORE,&nbsp;L...</br></font><font color="black"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;PathElement&nbsp;SUBSYSTEM_PATH&nbsp;=&nbsp;PathElement.pathElement(ModelDescriptionConstants.SUBS...</br></font><font color="black"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;PathElement&nbsp;PARTICIPANT_PATH&nbsp;=&nbsp;PathElement.pathElement(LogStoreConstants.PARTICIPAN...</br></font><font color="black"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;PathElement&nbsp;TRANSACTION_PATH&nbsp;=&nbsp;PathElement.pathElement(LogStoreConstants.TRANSACTIO...</br></font><font color="black"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;StandardResourceDescriptionResolver&nbsp;getResourceDescriptionResolver(final&nbsp;String...&nbsp;keyPre...</br></font><font color="black"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuilder&nbsp;prefix&nbsp;=&nbsp;new&nbsp;StringBuilder(SUBSYSTEM_NAME);
+</br></font><font color="black"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(String&nbsp;kp&nbsp;:&nbsp;keyPrefix)&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prefix.append('.').append(kp);
+</br></font><font color="black"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;StandardResourceDescriptionResolver(prefix.toString(),&nbsp;RESOURCE_NAME,&nbsp;Transaction...</br></font><font color="black"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;MBeanServer&nbsp;getMBeanServer(OperationContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceRegistry&nbsp;serviceRegistry&nbsp;=&nbsp;context.getServiceRegistry(false);
+</br></font><font color="black"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceController&lt;?&gt;&nbsp;serviceController&nbsp;=&nbsp;serviceRegistry.getService(MBEAN_SERVER_SERVI...</br></font><font color="black"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(serviceController&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;TransactionLogger.ROOT_LOGGER.jmxSubsystemNotInstalled();
+</br></font><font color="black"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(MBeanServer)&nbsp;serviceController.getValue();
+</br></font><font color="black"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@inheritDoc}
+</br></font><font color="black"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;initialize(ExtensionContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransactionLogger.ROOT_LOGGER.debug("Initializing&nbsp;Transactions&nbsp;Extension");
+</br></font><font color="black"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;LogStoreResource&nbsp;resource&nbsp;=&nbsp;new&nbsp;LogStoreResource();
+</br></font><font color="red"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;registerRuntimeOnly&nbsp;=&nbsp;context.isRuntimeOnlyRegistrationValid();
+</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;SubsystemRegistration&nbsp;subsystem&nbsp;=&nbsp;context.registerSubsystem(SUBSYSTEM_NAME,&nbsp;CURRENT_MO...</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;TransactionSubsystemRootResourceDefinition&nbsp;rootResourceDefinition&nbsp;=&nbsp;new&nbsp;TransactionSub...</br></font><font color="red"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ManagementResourceRegistration&nbsp;registration&nbsp;=&nbsp;subsystem.registerSubsystemModel(rootRes...</br></font><font color="red"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registration.registerOperationHandler(GenericSubsystemDescribeHandler.DEFINITION,&nbsp;GenericSub...</br></font><font color="red"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Create&nbsp;the&nbsp;path&nbsp;resolver&nbsp;handlers
+</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.getProcessType().isServer())&nbsp;{
+</br></font><font color="red"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;It's&nbsp;less&nbsp;than&nbsp;ideal&nbsp;to&nbsp;create&nbsp;a&nbsp;separate&nbsp;operation&nbsp;here,&nbsp;but&nbsp;this&nbsp;extension&nbsp;contains...</br></font><font color="red"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResolvePathHandler&nbsp;objectStorePathHandler&nbsp;=&nbsp;ResolvePathHandler.Builder.of(RESOLVE_...</br></font><font color="red"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setPathAttribute(TransactionSubsystemRootResourceDefinition.OBJECT_STORE_PATH)
+</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setRelativeToAttribute(TransactionSubsystemRootResourceDefinition.OBJECT_STORE_R...</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registration.registerOperationHandler(objectStorePathHandler.getOperationDefinition(),&nbsp;o...</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResolvePathHandler&nbsp;resolvePathHandler&nbsp;=&nbsp;ResolvePathHandler.Builder.of(context.getP...</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setPathAttribute(TransactionSubsystemRootResourceDefinition.PATH)
+</br></font><font color="black"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setRelativeToAttribute(TransactionSubsystemRootResourceDefinition.RELATIVE_TO)
+</br></font><font color="black"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setDeprecated(ModelVersion.create(1,4))
+</br></font><font color="black"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.build();
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registration.registerOperationHandler(resolvePathHandler.getOperationDefinition(),&nbsp;resol...</br></font><font color="black"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManagementResourceRegistration&nbsp;logStoreChild&nbsp;=&nbsp;registration.registerSubModel(new&nbsp;LogStoreDef...</br></font><font color="black"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(registerRuntimeOnly)&nbsp;{
+</br></font><font color="red"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManagementResourceRegistration&nbsp;transactionChild&nbsp;=&nbsp;logStoreChild.registerSubModel(new&nbsp;Log...</br></font><font color="black"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transactionChild.registerSubModel(LogStoreTransactionParticipantDefinition.INSTANCE);
+</br></font><font color="black"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystem.registerXMLElementWriter(TransactionSubsystemXMLPersister.INSTANCE);
+</br></font><font color="black"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(context.isRegisterTransformers())&nbsp;{
+</br></font><font color="black"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Register&nbsp;the&nbsp;model&nbsp;transformers
+</br></font><font color="red"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registerTransformers(subsystem);
+</br></font><font color="black"><b>&nbsp;143.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;144.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;145.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;146.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;147.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@inheritDoc}
+</br></font><font color="black"><b>&nbsp;148.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;149.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;initializeParsers(ExtensionParsingContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;150.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_1_0.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;151.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_1_1.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_1_2.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;153.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_1_3.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;154.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_1_4.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;155.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_1_5.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;156.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_2_0.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;157.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.setSubsystemXmlMapping(SUBSYSTEM_NAME,&nbsp;Namespace.TRANSACTIONS_3_0.getUriString(),&nbsp;Tr...</br></font><font color="black"><b>&nbsp;158.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;159.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;160.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Transformation
+</br></font><font color="black"><b>&nbsp;161.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;162.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;163.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Register&nbsp;the&nbsp;transformers&nbsp;for&nbsp;older&nbsp;model&nbsp;versions.
+</br></font><font color="black"><b>&nbsp;164.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;165.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;subsystem&nbsp;the&nbsp;subsystems&nbsp;registration
+</br></font><font color="black"><b>&nbsp;166.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;167.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;void&nbsp;registerTransformers(final&nbsp;SubsystemRegistration&nbsp;subsystem)&nbsp;{
+</br></font><font color="black"><b>&nbsp;168.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;169.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResourceTransformationDescriptionBuilder&nbsp;subsystemRoot200&nbsp;=&nbsp;TransformationDescriptionB...</br></font><font color="black"><b>&nbsp;170.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;171.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Versions&nbsp;&lt;&nbsp;3.0.0&nbsp;is&nbsp;not&nbsp;able&nbsp;to&nbsp;handle&nbsp;commit-markable-resource
+</br></font><font color="black"><b>&nbsp;172.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot200.rejectChildResource(CMResourceResourceDefinition.PATH_CM_RESOURCE);
+</br></font><font color="black"><b>&nbsp;173.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;174.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelVersion&nbsp;version200&nbsp;=&nbsp;ModelVersion.create(2,&nbsp;0,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;175.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;TransformationDescription&nbsp;description200&nbsp;=&nbsp;subsystemRoot200.build();
+</br></font><font color="black"><b>&nbsp;176.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransformationDescription.Tools.register(description200,&nbsp;subsystem,&nbsp;version200);
+</br></font><font color="black"><b>&nbsp;177.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;178.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;179.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;180.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ResourceTransformationDescriptionBuilder&nbsp;subsystemRoot&nbsp;=&nbsp;TransformationDescriptionBuil...</br></font><font color="black"><b>&nbsp;181.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;182.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Versions&nbsp;&lt;&nbsp;1.3.0&nbsp;assume&nbsp;'true'&nbsp;for&nbsp;the&nbsp;hornetq-store-enable-async-io&nbsp;attribute&nbsp;(in&nbsp;which&nbsp;c...</br></font><font color="black"><b>&nbsp;183.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//and&nbsp;enable&nbsp;async&nbsp;io&nbsp;if&nbsp;found.&nbsp;The&nbsp;default&nbsp;value&nbsp;if&nbsp;not&nbsp;defined&nbsp;is&nbsp;'false'&nbsp;though.&nbsp;This&nbsp;sho...</br></font><font color="black"><b>&nbsp;184.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot.getAttributeBuilder()
+</br></font><font color="black"><b>&nbsp;185.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setDiscard(new&nbsp;DiscardAttributeChecker.DiscardAttributeValueChecker(false,&nbsp;false,&nbsp;n...</br></font><font color="black"><b>&nbsp;186.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransactionSubsystemRootResourceDefinition.HORNETQ_STORE_ENABLE_ASYNC_IO)
+</br></font><font color="black"><b>&nbsp;187.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addRejectCheck(RejectHornetQStoreAsyncIOChecker.INSTANCE,&nbsp;TransactionSubsystemRootR...</br></font><font color="black"><b>&nbsp;188.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Legacy&nbsp;name&nbsp;for&nbsp;enabling/disabling&nbsp;statistics
+</br></font><font color="black"><b>&nbsp;189.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addRename(TransactionSubsystemRootResourceDefinition.STATISTICS_ENABLED,&nbsp;CommonAttr...</br></font><font color="black"><b>&nbsp;190.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Before&nbsp;2.0.0&nbsp;this&nbsp;value&nbsp;was&nbsp;not&nbsp;nillable&nbsp;in&nbsp;practise.&nbsp;Set&nbsp;it&nbsp;to&nbsp;'false'&nbsp;if&nbsp;undefin...</br></font><font color="black"><b>&nbsp;191.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setValueConverter(ProcessIdUuidConverter.INSTANCE,&nbsp;TransactionSubsystemRootResource...</br></font><font color="black"><b>&nbsp;192.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;193.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot.rejectChildResource(CMResourceResourceDefinition.PATH_CM_RESOURCE);
+</br></font><font color="black"><b>&nbsp;194.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;195.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelVersion&nbsp;version120&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;2,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;196.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;TransformationDescription&nbsp;description120&nbsp;=&nbsp;subsystemRoot.build();
+</br></font><font color="black"><b>&nbsp;197.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransformationDescription.Tools.register(description120,&nbsp;subsystem,&nbsp;version120);
+</br></font><font color="black"><b>&nbsp;198.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;199.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot.getAttributeBuilder()
+</br></font><font color="black"><b>&nbsp;200.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setDiscard(UnneededJDBCStoreChecker.INSTANCE,&nbsp;TransactionSubsystemRootResourceDefin...</br></font><font color="black"><b>&nbsp;201.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addRejectCheck(RejectAttributeChecker.DEFINED,&nbsp;TransactionSubsystemRootResourceDefi...</br></font><font color="black"><b>&nbsp;202.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;203.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Transformations&nbsp;to&nbsp;the&nbsp;1.1.1&nbsp;Model:
+</br></font><font color="black"><b>&nbsp;204.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;1)&nbsp;Remove&nbsp;JDBC&nbsp;store&nbsp;attributes&nbsp;if&nbsp;not&nbsp;used
+</br></font><font color="black"><b>&nbsp;205.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;2)&nbsp;Fail&nbsp;if&nbsp;new&nbsp;attributes&nbsp;are&nbsp;set&nbsp;(and&nbsp;not&nbsp;removed&nbsp;by&nbsp;step&nbsp;1)
+</br></font><font color="black"><b>&nbsp;206.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;207.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Reuse&nbsp;the&nbsp;builder&nbsp;and&nbsp;add&nbsp;reject&nbsp;expression&nbsp;for&nbsp;1.1.1
+</br></font><font color="black"><b>&nbsp;208.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot.getAttributeBuilder()
+</br></font><font color="black"><b>&nbsp;209.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addRejectCheck(RejectAttributeChecker.SIMPLE_EXPRESSIONS,&nbsp;TransactionSubsystemRootR...</br></font><font color="black"><b>&nbsp;210.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;211.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot.rejectChildResource(CMResourceResourceDefinition.PATH_CM_RESOURCE);
+</br></font><font color="black"><b>&nbsp;212.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelVersion&nbsp;version111&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;1,&nbsp;1);
+</br></font><font color="black"><b>&nbsp;213.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;TransformationDescription&nbsp;description111&nbsp;=&nbsp;subsystemRoot.build();
+</br></font><font color="black"><b>&nbsp;214.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransformationDescription.Tools.register(description111,&nbsp;subsystem,&nbsp;version111);
+</br></font><font color="black"><b>&nbsp;215.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;216.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Transformations&nbsp;to&nbsp;the&nbsp;1.1.0&nbsp;Model:
+</br></font><font color="black"><b>&nbsp;217.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;1)&nbsp;Remove&nbsp;JDBC&nbsp;store&nbsp;attributes&nbsp;if&nbsp;not&nbsp;used
+</br></font><font color="black"><b>&nbsp;218.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;2)&nbsp;Fail&nbsp;if&nbsp;new&nbsp;attributes&nbsp;are&nbsp;set&nbsp;(and&nbsp;not&nbsp;removed&nbsp;by&nbsp;step&nbsp;1)
+</br></font><font color="black"><b>&nbsp;219.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;3)&nbsp;Reject&nbsp;expressions
+</br></font><font color="black"><b>&nbsp;220.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelVersion&nbsp;version110&nbsp;=&nbsp;ModelVersion.create(1,&nbsp;1,&nbsp;0);
+</br></font><font color="black"><b>&nbsp;221.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;222.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subsystemRoot.getAttributeBuilder()
+</br></font><font color="black"><b>&nbsp;223.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addRejectCheck(RejectAttributeChecker.SIMPLE_EXPRESSIONS,&nbsp;TransactionSubsystemRootR...</br></font><font color="black"><b>&nbsp;224.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;225.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;TransformationDescription&nbsp;description110&nbsp;=&nbsp;subsystemRoot.build();
+</br></font><font color="black"><b>&nbsp;226.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransformationDescription.Tools.register(description110,&nbsp;subsystem,&nbsp;version110);
+</br></font><font color="black"><b>&nbsp;227.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;228.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;229.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;class&nbsp;UnneededJDBCStoreChecker&nbsp;implements&nbsp;DiscardAttributeChecker&nbsp;{
+</br></font><font color="black"><b>&nbsp;230.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;231.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;UnneededJDBCStoreChecker&nbsp;INSTANCE&nbsp;=&nbsp;new&nbsp;UnneededJDBCStoreChecker();
+</br></font><font color="black"><b>&nbsp;232.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;233.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;234.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;isDiscardExpressions()&nbsp;{
+</br></font><font color="black"><b>&nbsp;235.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+</br></font><font color="black"><b>&nbsp;236.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;237.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;238.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;239.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;isDiscardUndefined()&nbsp;{
+</br></font><font color="black"><b>&nbsp;240.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</br></font><font color="black"><b>&nbsp;241.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;242.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;243.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;244.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;isOperationParameterDiscardable(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;Mo...</br></font><font color="black"><b>&nbsp;245.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;String&nbsp;op&nbsp;=&nbsp;operation.get(ModelDescriptionConstants.OP).asString();
+</br></font><font color="black"><b>&nbsp;246.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(ModelDescriptionConstants.WRITE_ATTRIBUTE_OPERATION.equals(op))&nbsp;{
+</br></font><font color="black"><b>&nbsp;247.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Never&nbsp;discard&nbsp;this&nbsp;attribute&nbsp;for&nbsp;write-attribute&nbsp;operations
+</br></font><font color="black"><b>&nbsp;248.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(attributeName.equals((TransactionSubsystemRootResourceDefinition.USE_JDBC_STORE.g...</br></font><font color="black"><b>&nbsp;249.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+</br></font><font color="black"><b>&nbsp;250.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;251.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Check&nbsp;the&nbsp;current&nbsp;model
+</br></font><font color="black"><b>&nbsp;252.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ModelNode&nbsp;model&nbsp;=&nbsp;context.readResource(PathAddress.EMPTY_ADDRESS).getModel();
+</br></font><font color="black"><b>&nbsp;253.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;model.get(attributeName).set(attributeValue);
+</br></font><font color="black"><b>&nbsp;254.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;discard(model);
+</br></font><font color="black"><b>&nbsp;255.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="black"><b>&nbsp;256.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;discard(operation);
+</br></font><font color="black"><b>&nbsp;257.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;258.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;259.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;260.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;261.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;isResourceAttributeDiscardable(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;Mod...</br></font><font color="black"><b>&nbsp;262.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;discard(context.readResource(PathAddress.EMPTY_ADDRESS).getModel());
+</br></font><font color="black"><b>&nbsp;263.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;264.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;265.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean&nbsp;discard(final&nbsp;ModelNode&nbsp;model)&nbsp;{
+</br></font><font color="black"><b>&nbsp;266.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(model.hasDefined(TransactionSubsystemRootResourceDefinition.USE_JDBC_STORE.getName())...</br></font><font color="black"><b>&nbsp;267.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;!&nbsp;model.get(TransactionSubsystemRootResourceDefinition.USE_JDBC_STORE.getName...</br></font><font color="black"><b>&nbsp;268.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;269.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</br></font><font color="black"><b>&nbsp;270.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;271.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;272.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;273.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;class&nbsp;RejectHornetQStoreAsyncIOChecker&nbsp;extends&nbsp;RejectAttributeChecker.DefaultReje...</br></font><font color="black"><b>&nbsp;274.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;RejectHornetQStoreAsyncIOChecker&nbsp;INSTANCE&nbsp;=&nbsp;new&nbsp;RejectHornetQStoreAsyncIOChecke...</br></font><font color="black"><b>&nbsp;275.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;276.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;277.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;String&nbsp;getRejectionLogMessage(Map&lt;String,&nbsp;ModelNode&gt;&nbsp;attributes)&nbsp;{
+</br></font><font color="black"><b>&nbsp;278.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;TransactionLogger.ROOT_LOGGER.transformHornetQStoreEnableAsyncIoMustBeTrue();
+</br></font><font color="black"><b>&nbsp;279.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;280.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;281.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;282.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;rejectOperationParameter(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;ModelNode...</br></font><font color="black"><b>&nbsp;283.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModelNode&nbsp;operation,&nbsp;TransformationContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;284.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(operation.get(OP).asString().equals(ADD))&nbsp;{
+</br></font><font color="black"><b>&nbsp;285.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;rejectCheck(address,&nbsp;attributeName,&nbsp;attributeValue,&nbsp;operation);
+</br></font><font color="black"><b>&nbsp;286.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;287.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;rejectResourceAttribute(address,&nbsp;attributeName,&nbsp;attributeValue,&nbsp;context);
+</br></font><font color="black"><b>&nbsp;288.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;289.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;290.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;291.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;boolean&nbsp;rejectResourceAttribute(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;ModelNode&nbsp;...</br></font><font color="black"><b>&nbsp;292.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransformationContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;293.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;rejectCheck(address,&nbsp;attributeName,&nbsp;attributeValue,&nbsp;context.readResourceFromRoot(...</br></font><font color="black"><b>&nbsp;294.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;295.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;296.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;boolean&nbsp;rejectCheck(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;ModelNode&nbsp;attribute...</br></font><font color="black"><b>&nbsp;297.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModelNode&nbsp;model)&nbsp;{
+</br></font><font color="black"><b>&nbsp;298.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Will&nbsp;not&nbsp;get&nbsp;called&nbsp;if&nbsp;it&nbsp;was&nbsp;discarded
+</br></font><font color="black"><b>&nbsp;299.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!attributeValue.isDefined()&nbsp;||&nbsp;!attributeValue.asString().equals("true"))&nbsp;{
+</br></font><font color="black"><b>&nbsp;300.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//If&nbsp;use-hornetq-store&nbsp;is&nbsp;undefined&nbsp;or&nbsp;false,&nbsp;don't&nbsp;reject
+</br></font><font color="black"><b>&nbsp;301.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(model.hasDefined(TransactionSubsystemRootResourceDefinition.USEHORNETQSTORE.getN...</br></font><font color="black"><b>&nbsp;302.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;!model.get(TransactionSubsystemRootResourceDefinition.USEHORNETQSTORE.get...</br></font><font color="black"><b>&nbsp;303.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;304.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;305.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+</br></font><font color="black"><b>&nbsp;306.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;307.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;308.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;309.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;boolean&nbsp;rejectAttribute(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;ModelNode&nbsp;attri...</br></font><font color="black"><b>&nbsp;310.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TransformationContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;311.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//will&nbsp;not&nbsp;get&nbsp;called&nbsp;since&nbsp;we've&nbsp;overridden&nbsp;the&nbsp;other&nbsp;methods
+</br></font><font color="black"><b>&nbsp;312.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+</br></font><font color="black"><b>&nbsp;313.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;314.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;315.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;316.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;class&nbsp;ProcessIdUuidConverter&nbsp;extends&nbsp;AttributeConverter.DefaultAttributeConverter...</br></font><font color="black"><b>&nbsp;317.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;ProcessIdUuidConverter&nbsp;INSTANCE&nbsp;=&nbsp;new&nbsp;ProcessIdUuidConverter();
+</br></font><font color="black"><b>&nbsp;318.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;319.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;convertAttribute(PathAddress&nbsp;address,&nbsp;String&nbsp;attributeName,&nbsp;ModelNode&nbsp;attribu...</br></font><font color="black"><b>&nbsp;320.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!attributeValue.isDefined()){
+</br></font><font color="black"><b>&nbsp;321.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attributeValue.set(false);
+</br></font><font color="black"><b>&nbsp;322.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;323.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;324.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;325.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;326.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;327.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+		  </tr>
+  		</table>
+  		</div>
+</body>
+</html>

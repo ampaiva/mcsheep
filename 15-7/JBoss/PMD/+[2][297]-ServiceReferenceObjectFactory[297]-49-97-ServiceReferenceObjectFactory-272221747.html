@@ -1,0 +1,333 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/clones.css">
+  <title>PMD - View of +[2][297]-ServiceReferenceObjectFactory[297]-49-97-ServiceReferenceObjectFactory-272221747</title>
+</head>
+<body>
+  <h1>PMD - View of +[2][297]-ServiceReferenceObjectFactory[297]-49-97-ServiceReferenceObjectFactory-272221747</h1>
+   	<br><div style="overflow-x:auto">
+		<table id="tableid">
+		  	<tr>
+		    		<th>ServiceReferenceObjectFactory
+		    		<th>ServiceReferenceObjectFactory
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;ServiceReferenceObjectFactory&nbsp;implements&nbsp;ServiceAwareObjectFactory&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;volatile&nbsp;ServiceRegistry&nbsp;serviceRegistry;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Create&nbsp;a&nbsp;reference&nbsp;to&nbsp;a&nbsp;sub&nbsp;class&nbsp;of&nbsp;{@link&nbsp;ServiceReferenceObjectFactory}&nbsp;that&nbsp;injects&nbsp;the&nbsp;v...</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Reference&nbsp;createReference(final&nbsp;ServiceName&nbsp;service,&nbsp;Class&lt;?&nbsp;extends&nbsp;ServiceRefere...</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ModularReference.create(Context.class,&nbsp;new&nbsp;ServiceNameRefAdr("srof",&nbsp;service),&nbsp;factor...</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;injectServiceRegistry(ServiceRegistry&nbsp;registry)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.serviceRegistry&nbsp;=&nbsp;registry;
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings("unchecked")
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;final&nbsp;Object&nbsp;getObjectInstance(Object&nbsp;obj,&nbsp;Name&nbsp;name,&nbsp;Context&nbsp;nameCtx,&nbsp;Hashtable&lt;?,&nbsp;?&gt;&nbsp;en...</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Reference&nbsp;reference&nbsp;=&nbsp;(Reference)&nbsp;obj;
+</br></font><font color="red"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceNameRefAdr&nbsp;nameAdr&nbsp;=&nbsp;(ServiceNameRefAdr)&nbsp;reference.get("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(nameAdr&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.invalidContextReference("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;serviceName&nbsp;=&nbsp;(ServiceName)nameAdr.getContent();
+</br></font><font color="red"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceController&lt;?&gt;&nbsp;controller;
+</br></font><font color="red"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller&nbsp;=&nbsp;serviceRegistry.getRequiredService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(ServiceNotFoundException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;StabilityMonitor&nbsp;monitor&nbsp;=&nbsp;new&nbsp;StabilityMonitor();
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.addController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.awaitStability();
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(InterruptedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.threadInterrupt(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.removeController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(controller.getState())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UP:
+</br></font><font color="red"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;getObjectInstance(controller.getValue(),&nbsp;obj,&nbsp;name,&nbsp;nameCtx,&nbsp;environment);
+</br></font><font color="red"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;START_FAILED:
+</br></font><font color="red"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;REMOVED:
+</br></font><font color="red"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	        	<td><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;ServiceReferenceObjectFactory&nbsp;implements&nbsp;ServiceAwareObjectFactory&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;volatile&nbsp;ServiceRegistry&nbsp;serviceRegistry;
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Create&nbsp;a&nbsp;reference&nbsp;to&nbsp;a&nbsp;sub&nbsp;class&nbsp;of&nbsp;{@link&nbsp;ServiceReferenceObjectFactory}&nbsp;that&nbsp;injects&nbsp;the&nbsp;v...</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Reference&nbsp;createReference(final&nbsp;ServiceName&nbsp;service,&nbsp;Class&lt;?&nbsp;extends&nbsp;ServiceRefere...</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ModularReference.create(Context.class,&nbsp;new&nbsp;ServiceNameRefAdr("srof",&nbsp;service),&nbsp;factor...</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;injectServiceRegistry(ServiceRegistry&nbsp;registry)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.serviceRegistry&nbsp;=&nbsp;registry;
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings("unchecked")
+</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;final&nbsp;Object&nbsp;getObjectInstance(Object&nbsp;obj,&nbsp;Name&nbsp;name,&nbsp;Context&nbsp;nameCtx,&nbsp;Hashtable&lt;?,&nbsp;?&gt;&nbsp;en...</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Reference&nbsp;reference&nbsp;=&nbsp;(Reference)&nbsp;obj;
+</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceNameRefAdr&nbsp;nameAdr&nbsp;=&nbsp;(ServiceNameRefAdr)&nbsp;reference.get("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(nameAdr&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.invalidContextReference("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;serviceName&nbsp;=&nbsp;(ServiceName)nameAdr.getContent();
+</br></font><font color="red"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceController&lt;?&gt;&nbsp;controller;
+</br></font><font color="red"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller&nbsp;=&nbsp;serviceRegistry.getRequiredService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(ServiceNotFoundException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;StabilityMonitor&nbsp;monitor&nbsp;=&nbsp;new&nbsp;StabilityMonitor();
+</br></font><font color="red"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.addController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.awaitStability();
+</br></font><font color="red"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(InterruptedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.threadInterrupt(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.removeController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(controller.getState())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UP:
+</br></font><font color="red"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;getObjectInstance(controller.getValue(),&nbsp;obj,&nbsp;name,&nbsp;nameCtx,&nbsp;environment);
+</br></font><font color="red"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;START_FAILED:
+</br></font><font color="red"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;REMOVED:
+</br></font><font color="red"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2010,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.naming;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.Hashtable;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.Context;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.Name;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.RefAddr;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.Reference;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.context.ModularReference;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.logging.NamingLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceController;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceNotFoundException;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceRegistry;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StabilityMonitor;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Abstract&nbsp;object&nbsp;factory&nbsp;that&nbsp;allows&nbsp;for&nbsp;the&nbsp;creation&nbsp;of&nbsp;service&nbsp;references.&nbsp;Object&nbsp;factories&nbsp;that...</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;ServiceReferenceObjectFactory}&nbsp;can&nbsp;get&nbsp;access&nbsp;to&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;service&nbsp;described&nbsp;by&nbsp;the...</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&lt;p/&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;If&nbsp;the&nbsp;factory&nbsp;state&nbsp;is&nbsp;no&nbsp;{@link&nbsp;State#UP}&nbsp;then&nbsp;the&nbsp;factory&nbsp;will&nbsp;block.&nbsp;If&nbsp;the&nbsp;state&nbsp;is&nbsp;{@link&nbsp;S...</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;State#REMOVED}&nbsp;(or&nbsp;the&nbsp;state&nbsp;transactions&nbsp;to&nbsp;one&nbsp;of&nbsp;these&nbsp;states&nbsp;while&nbsp;blocking)&nbsp;an&nbsp;except...</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Stuart&nbsp;Douglas
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:ropalka@redhat.com"&gt;Richard&nbsp;Opalka&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;ServiceReferenceObjectFactory&nbsp;implements&nbsp;ServiceAwareObjectFactory&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;volatile&nbsp;ServiceRegistry&nbsp;serviceRegistry;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Create&nbsp;a&nbsp;reference&nbsp;to&nbsp;a&nbsp;sub&nbsp;class&nbsp;of&nbsp;{@link&nbsp;ServiceReferenceObjectFactory}&nbsp;that&nbsp;injects&nbsp;the&nbsp;v...</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Reference&nbsp;createReference(final&nbsp;ServiceName&nbsp;service,&nbsp;Class&lt;?&nbsp;extends&nbsp;ServiceRefere...</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ModularReference.create(Context.class,&nbsp;new&nbsp;ServiceNameRefAdr("srof",&nbsp;service),&nbsp;factor...</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;injectServiceRegistry(ServiceRegistry&nbsp;registry)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.serviceRegistry&nbsp;=&nbsp;registry;
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings("unchecked")
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;final&nbsp;Object&nbsp;getObjectInstance(Object&nbsp;obj,&nbsp;Name&nbsp;name,&nbsp;Context&nbsp;nameCtx,&nbsp;Hashtable&lt;?,&nbsp;?&gt;&nbsp;en...</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Reference&nbsp;reference&nbsp;=&nbsp;(Reference)&nbsp;obj;
+</br></font><font color="red"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceNameRefAdr&nbsp;nameAdr&nbsp;=&nbsp;(ServiceNameRefAdr)&nbsp;reference.get("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(nameAdr&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.invalidContextReference("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;serviceName&nbsp;=&nbsp;(ServiceName)nameAdr.getContent();
+</br></font><font color="red"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceController&lt;?&gt;&nbsp;controller;
+</br></font><font color="red"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller&nbsp;=&nbsp;serviceRegistry.getRequiredService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(ServiceNotFoundException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;StabilityMonitor&nbsp;monitor&nbsp;=&nbsp;new&nbsp;StabilityMonitor();
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.addController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.awaitStability();
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(InterruptedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.threadInterrupt(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.removeController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(controller.getState())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UP:
+</br></font><font color="red"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;getObjectInstance(controller.getValue(),&nbsp;obj,&nbsp;name,&nbsp;nameCtx,&nbsp;environment);
+</br></font><font color="red"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;START_FAILED:
+</br></font><font color="red"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;REMOVED:
+</br></font><font color="red"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;we&nbsp;should&nbsp;never&nbsp;get&nbsp;here,&nbsp;as&nbsp;the&nbsp;listener&nbsp;should&nbsp;not&nbsp;notify&nbsp;unless&nbsp;the&nbsp;state&nbsp;was&nbsp;one&nbsp;of&nbsp;t...</br></font><font color="black"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveServiceBug(serviceName,&nbsp;getClass().getName(),&nbsp;co...</br></font><font color="black"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Handles&nbsp;the&nbsp;service&nbsp;reference.&nbsp;The&nbsp;parameters&nbsp;are&nbsp;the&nbsp;same&nbsp;as
+</br></font><font color="black"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;javax.naming.spi.ObjectFactory#getObjectInstance(Object,&nbsp;Name,&nbsp;Context,&nbsp;Hashtable)},&nbsp;b...</br></font><font color="black"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;first&nbsp;parameter.
+</br></font><font color="black"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getObjectInstance(Object&nbsp;serviceValue,&nbsp;Object&nbsp;obj,&nbsp;Name&nbsp;name,&nbsp;Context&nbsp;nameCtx,
+</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hashtable&lt;?,&nbsp;?&gt;&nbsp;environment)&nbsp;throws&nbsp;Exception&nbsp;{
+</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;serviceValue;
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;class&nbsp;ServiceNameRefAdr&nbsp;extends&nbsp;RefAddr&nbsp;{
+</br></font><font color="black"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;long&nbsp;serialVersionUID&nbsp;=&nbsp;3677121114687908679L;
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ServiceName&nbsp;serviceName;
+</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ServiceNameRefAdr(String&nbsp;s,&nbsp;ServiceName&nbsp;serviceName)&nbsp;{
+</br></font><font color="black"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(s);
+</br></font><font color="black"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.serviceName&nbsp;=&nbsp;serviceName;
+</br></font><font color="black"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getContent()&nbsp;{
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;serviceName;
+</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2010,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.weld.deployment.processors;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.Hashtable;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.Context;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.Name;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.RefAddr;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;javax.naming.Reference;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.ServiceAwareObjectFactory;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.context.ModularReference;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.logging.NamingLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceController;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceNotFoundException;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceRegistry;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StabilityMonitor;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Abstract&nbsp;object&nbsp;factory&nbsp;that&nbsp;allows&nbsp;for&nbsp;the&nbsp;creation&nbsp;of&nbsp;service&nbsp;references.&nbsp;Object&nbsp;factories&nbsp;that...</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;ServiceReferenceObjectFactory}&nbsp;can&nbsp;get&nbsp;access&nbsp;to&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;service&nbsp;described&nbsp;by&nbsp;the...</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&lt;p/&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;If&nbsp;the&nbsp;factory&nbsp;state&nbsp;is&nbsp;no&nbsp;{@link&nbsp;State#UP}&nbsp;then&nbsp;the&nbsp;factory&nbsp;will&nbsp;block.&nbsp;If&nbsp;the&nbsp;state&nbsp;is&nbsp;{@link&nbsp;S...</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;State#REMOVED}&nbsp;(or&nbsp;the&nbsp;state&nbsp;transactions&nbsp;to&nbsp;one&nbsp;of&nbsp;these&nbsp;states&nbsp;while&nbsp;blocking)&nbsp;an&nbsp;except...</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;Stuart&nbsp;Douglas
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="red"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;class&nbsp;ServiceReferenceObjectFactory&nbsp;implements&nbsp;ServiceAwareObjectFactory&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;volatile&nbsp;ServiceRegistry&nbsp;serviceRegistry;
+</br></font><font color="red"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="red"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Create&nbsp;a&nbsp;reference&nbsp;to&nbsp;a&nbsp;sub&nbsp;class&nbsp;of&nbsp;{@link&nbsp;ServiceReferenceObjectFactory}&nbsp;that&nbsp;injects&nbsp;the&nbsp;v...</br></font><font color="red"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="red"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;Reference&nbsp;createReference(final&nbsp;ServiceName&nbsp;service,&nbsp;Class&lt;?&nbsp;extends&nbsp;ServiceRefere...</br></font><font color="red"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ModularReference.create(Context.class,&nbsp;new&nbsp;ServiceNameRefAdr("srof",&nbsp;service),&nbsp;factor...</br></font><font color="red"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;injectServiceRegistry(ServiceRegistry&nbsp;registry)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.serviceRegistry&nbsp;=&nbsp;registry;
+</br></font><font color="red"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@SuppressWarnings("unchecked")
+</br></font><font color="red"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="red"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;final&nbsp;Object&nbsp;getObjectInstance(Object&nbsp;obj,&nbsp;Name&nbsp;name,&nbsp;Context&nbsp;nameCtx,&nbsp;Hashtable&lt;?,&nbsp;?&gt;&nbsp;en...</br></font><font color="red"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Reference&nbsp;reference&nbsp;=&nbsp;(Reference)&nbsp;obj;
+</br></font><font color="red"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceNameRefAdr&nbsp;nameAdr&nbsp;=&nbsp;(ServiceNameRefAdr)&nbsp;reference.get("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(nameAdr&nbsp;==&nbsp;null)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.invalidContextReference("srof");
+</br></font><font color="red"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;serviceName&nbsp;=&nbsp;(ServiceName)nameAdr.getContent();
+</br></font><font color="red"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceController&lt;?&gt;&nbsp;controller;
+</br></font><font color="red"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;controller&nbsp;=&nbsp;serviceRegistry.getRequiredService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(ServiceNotFoundException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;StabilityMonitor&nbsp;monitor&nbsp;=&nbsp;new&nbsp;StabilityMonitor();
+</br></font><font color="red"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.addController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.awaitStability();
+</br></font><font color="red"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(InterruptedException&nbsp;e)&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.threadInterrupt(serviceName);
+</br></font><font color="red"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;monitor.removeController(controller);
+</br></font><font color="red"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;(controller.getState())&nbsp;{
+</br></font><font color="red"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;UP:
+</br></font><font color="red"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;getObjectInstance(controller.getValue(),&nbsp;obj,&nbsp;name,&nbsp;nameCtx,&nbsp;environment);
+</br></font><font color="red"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;START_FAILED:
+</br></font><font color="red"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;REMOVED:
+</br></font><font color="red"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveService(serviceName,&nbsp;getClass().getName(...</br></font><font color="red"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;we&nbsp;should&nbsp;never&nbsp;get&nbsp;here,&nbsp;as&nbsp;the&nbsp;listener&nbsp;should&nbsp;not&nbsp;notify&nbsp;unless&nbsp;the&nbsp;state&nbsp;was&nbsp;one&nbsp;of&nbsp;t...</br></font><font color="black"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;NamingLogger.ROOT_LOGGER.cannotResolveServiceBug(serviceName,&nbsp;getClass().getName(),&nbsp;co...</br></font><font color="black"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Handles&nbsp;the&nbsp;service&nbsp;reference.&nbsp;The&nbsp;parameters&nbsp;are&nbsp;the&nbsp;same&nbsp;as
+</br></font><font color="black"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;{@link&nbsp;javax.naming.spi.ObjectFactory#getObjectInstance(Object,&nbsp;Name,&nbsp;Context,&nbsp;Hashtable)},&nbsp;b...</br></font><font color="black"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;first&nbsp;parameter.
+</br></font><font color="black"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getObjectInstance(Object&nbsp;serviceValue,&nbsp;Object&nbsp;obj,&nbsp;Name&nbsp;name,&nbsp;Context&nbsp;nameCtx,&nbsp;Has...</br></font><font color="black"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;serviceValue;
+</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;class&nbsp;ServiceNameRefAdr&nbsp;extends&nbsp;RefAddr&nbsp;{
+</br></font><font color="black"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;long&nbsp;serialVersionUID&nbsp;=&nbsp;3677121114687908679L;
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ServiceName&nbsp;serviceName;
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ServiceNameRefAdr(String&nbsp;s,&nbsp;ServiceName&nbsp;serviceName)&nbsp;{
+</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(s);
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.serviceName&nbsp;=&nbsp;serviceName;
+</br></font><font color="black"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;Object&nbsp;getContent()&nbsp;{
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;serviceName;
+</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;}</br></font>
+		  </tr>
+  		</table>
+  		</div>
+</body>
+</html>

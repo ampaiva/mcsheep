@@ -1,0 +1,511 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/clones.css">
+  <title>McSheep - View of -[2][19]-ResourceAdapterDeploymentService[1]-108-108-ResourceAdapterDeploymentSe-1527068489</title>
+</head>
+<body>
+  <h1>McSheep - View of -[2][19]-ResourceAdapterDeploymentService[1]-108-108-ResourceAdapterDeploymentSe-1527068489</h1>
+   	<br><div style="overflow-x:auto">
+		<table id="tableid">
+		  	<tr>
+		    		<th>ResourceAdapterDeploymentService
+		    		<th>ResourceAdapterXmlDeploymentService
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="red"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;AS7RaDeployer(context.getChildTarget(),&nbsp;url,&nbsp;deploymentName,&nbsp;root,&nbsp;classLoader,&nbsp;cmd,...</br></font><font color="red"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raDeployer.setConfiguration(config.getValue());
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassLoader&nbsp;old&nbsp;=&nbsp;WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.pushOwner(duServiceName);
+</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(classLoader);
+</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raDeployment&nbsp;=&nbsp;raDeployer.doDeploy();
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deploymentName&nbsp;=&nbsp;raDeployment.getDeploymentName();
+</br></font><font color="black"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(old);
+</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.popOwner();
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raDeployer.checkActivation(cmd,&nbsp;activation))&nbsp;{
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPLOYMENT_CONNECTOR_LOGGER.debugf("Activating:&nbsp;%s",&nbsp;deploymentName);
+</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;raServiceName&nbsp;=&nbsp;ConnectorServices.getResourceAdapterServiceName(deployme...</br></font><font color="red"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;new&nbsp;ResourceAdapterDeployment(raDeployment,&nbsp;deploymentName,&nbsp;raServiceName);
+</br></font><font color="red"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;managementRepository.getValue().getConnectors().add(value.getDeployment().getConnect...</br></font><font color="red"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registry.getValue().registerResourceAdapterDeployment(value);
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.getChildTarget()
+</br></font><font color="red"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addService(raServiceName,
+</br></font><font color="red"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;ResourceAdapterService(deploymentName,&nbsp;raServiceName,&nbsp;value.getD...</br></font>
+	        	<td><font color="red"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;AS7RaXmlDeployer&nbsp;raDeployer&nbsp;=&nbsp;new&nbsp;AS7RaXmlDeployer(context.getChildTarget(),&nbsp;conne...</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raName,&nbsp;root,&nbsp;module.getClassLoader(),&nbsp;cmd,&nbsp;localRaXml,&nbsp;deploymentServiceName);
+</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raDeployer.setConfiguration(config.getValue());
+</br></font><font color="black"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.pushOwner(duServiceName);
+</br></font><font color="red"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassLoader&nbsp;old&nbsp;=&nbsp;WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(module.getClassLoader(...</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raxmlDeployment&nbsp;=&nbsp;raDeployer.doDeploy();
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(old);
+</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.popOwner();
+</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;new&nbsp;ResourceAdapterDeployment(raxmlDeployment,&nbsp;raName,&nbsp;raServiceName);
+</br></font><font color="red"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;managementRepository.getValue().getConnectors().add(value.getDeployment().getConnector()...</br></font><font color="red"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registry.getValue().registerResourceAdapterDeployment(value);
+</br></font><font color="red"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.getChildTarget()
+</br></font><font color="red"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addService(raServiceName,
+</br></font><font color="red"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;ResourceAdapterService(raName,&nbsp;raServiceName,&nbsp;value.getDeployment().getR...</br></font><font color="red"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addDependency(deploymentServiceName)
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setInitialMode(ServiceController.Mode.ACTIVE).install();
+</br></font>
+		  </tr>
+		  <tr valign="top">
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2010,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.connector.services.resourceadapters.deployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.logging.ConnectorLogger.DEPLOYMENT_CONNECTOR_LOGGER;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.io.File;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.net.URL;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.HashSet;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.List;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.Set;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.concurrent.ExecutorService;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.util.concurrent.RejectedExecutionException;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.logging.ConnectorLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.metadata.deployment.ResourceAdapterDeployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.metadata.xmldescriptors.ConnectorXmlDescriptor;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.services.mdr.AS7MetadataRepository;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.services.resourceadapters.ResourceAdapterService;
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.subsystems.resourceadapters.RaOperationUtil;
+</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.util.ConnectorServices;
+</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.WritableServiceBasedNamingStore;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.resourceadapter.Activation;
+</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.spec.AdminObject;
+</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.spec.ConnectionDefinition;
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.spec.Connector;
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.spec.ResourceAdapter;
+</br></font><font color="black"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.deployers.DeployersLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.deployers.common.CommonDeployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.logging.Logger;
+</br></font><font color="black"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.Service;
+</br></font><font color="black"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceController.Mode;
+</br></font><font color="black"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceTarget;
+</br></font><font color="black"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StartContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StartException;
+</br></font><font color="black"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StopContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.wildfly.security.manager.WildFlySecurityManager;
+</br></font><font color="black"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;A&nbsp;ResourceAdapterDeploymentService.
+</br></font><font color="black"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:stefano.maestri@redhat.com"&gt;Stefano&nbsp;Maestri&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:jesper.pedersen@jboss.org"&gt;Jesper&nbsp;Pedersen&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;final&nbsp;class&nbsp;ResourceAdapterDeploymentService&nbsp;extends&nbsp;AbstractResourceAdapterDeploymentService...</br></font><font color="black"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service&lt;ResourceAdapterDeployment&gt;&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;DeployersLogger&nbsp;DEPLOYERS_LOGGER&nbsp;=&nbsp;Logger.getMessageLogger(DeployersLogger....</br></font><font color="black"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ClassLoader&nbsp;classLoader;
+</br></font><font color="black"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ConnectorXmlDescriptor&nbsp;connectorXmlDescriptor;
+</br></font><font color="black"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;Connector&nbsp;cmd;
+</br></font><font color="black"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;Activation&nbsp;activation;
+</br></font><font color="black"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;CommonDeployment&nbsp;raDeployment&nbsp;=&nbsp;null;
+</br></font><font color="black"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;String&nbsp;deploymentName;
+</br></font><font color="black"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ServiceName&nbsp;deploymentServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ServiceName&nbsp;duServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;connectorXmlDescriptor
+</br></font><font color="black"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;cmd
+</br></font><font color="black"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@activationm&nbsp;activation
+</br></font><font color="black"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;classLoader
+</br></font><font color="black"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;deploymentServiceName
+</br></font><font color="black"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@param&nbsp;duServiceName&nbsp;the&nbsp;deployment&nbsp;unit's&nbsp;service&nbsp;name
+</br></font><font color="black"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;ResourceAdapterDeploymentService(final&nbsp;ConnectorXmlDescriptor&nbsp;connectorXmlDescriptor,&nbsp;fin...</br></font><font color="black"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;Activation&nbsp;activation,&nbsp;final&nbsp;ClassLoader&nbsp;classLoad...</br></font><font color="black"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.connectorXmlDescriptor&nbsp;=&nbsp;connectorXmlDescriptor;
+</br></font><font color="black"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.cmd&nbsp;=&nbsp;cmd;
+</br></font><font color="black"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.activation&nbsp;=&nbsp;activation;
+</br></font><font color="black"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.classLoader&nbsp;=&nbsp;classLoader;
+</br></font><font color="black"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.deploymentServiceName&nbsp;=&nbsp;deploymentServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.duServiceName&nbsp;=&nbsp;duServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;start(StartContext&nbsp;context)&nbsp;throws&nbsp;StartException&nbsp;{
+</br></font><font color="black"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;URL&nbsp;url&nbsp;=&nbsp;connectorXmlDescriptor&nbsp;==&nbsp;null&nbsp;?&nbsp;null&nbsp;:&nbsp;connectorXmlDescriptor.getUrl();
+</br></font><font color="black"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deploymentName&nbsp;=&nbsp;connectorXmlDescriptor&nbsp;==&nbsp;null&nbsp;?&nbsp;null&nbsp;:&nbsp;connectorXmlDescriptor.getDeploymen...</br></font><font color="black"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;connectorServicesRegistrationName&nbsp;=&nbsp;deploymentName;
+</br></font><font color="black"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;File&nbsp;root&nbsp;=&nbsp;connectorXmlDescriptor&nbsp;==&nbsp;null&nbsp;?&nbsp;null&nbsp;:&nbsp;connectorXmlDescriptor.getRoot();
+</br></font><font color="black"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPLOYMENT_CONNECTOR_LOGGER.debugf("DEPLOYMENT&nbsp;name&nbsp;=&nbsp;%s",deploymentName);
+</br></font><font color="black"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;boolean&nbsp;fromModule&nbsp;=&nbsp;duServiceName.getParent().equals(RaOperationUtil.RAR_MODULE);
+</br></font><font color="black"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;AS7RaDeployer&nbsp;raDeployer&nbsp;=
+</br></font><font color="red"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;AS7RaDeployer(context.getChildTarget(),&nbsp;url,&nbsp;deploymentName,&nbsp;root,&nbsp;classLoader,&nbsp;cmd,...</br></font><font color="red"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raDeployer.setConfiguration(config.getValue());
+</br></font><font color="black"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassLoader&nbsp;old&nbsp;=&nbsp;WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.pushOwner(duServiceName);
+</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(classLoader);
+</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raDeployment&nbsp;=&nbsp;raDeployer.doDeploy();
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deploymentName&nbsp;=&nbsp;raDeployment.getDeploymentName();
+</br></font><font color="black"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(old);
+</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.popOwner();
+</br></font><font color="black"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raDeployer.checkActivation(cmd,&nbsp;activation))&nbsp;{
+</br></font><font color="black"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPLOYMENT_CONNECTOR_LOGGER.debugf("Activating:&nbsp;%s",&nbsp;deploymentName);
+</br></font><font color="black"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ServiceName&nbsp;raServiceName&nbsp;=&nbsp;ConnectorServices.getResourceAdapterServiceName(deployme...</br></font><font color="red"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;new&nbsp;ResourceAdapterDeployment(raDeployment,&nbsp;deploymentName,&nbsp;raServiceName);
+</br></font><font color="red"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;managementRepository.getValue().getConnectors().add(value.getDeployment().getConnect...</br></font><font color="red"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registry.getValue().registerResourceAdapterDeployment(value);
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.getChildTarget()
+</br></font><font color="red"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addService(raServiceName,
+</br></font><font color="red"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;ResourceAdapterService(deploymentName,&nbsp;raServiceName,&nbsp;value.getD...</br></font><font color="black"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.install();
+</br></font><font color="black"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="black"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPLOYMENT_CONNECTOR_LOGGER.debugf("Not&nbsp;activating:&nbsp;%s",&nbsp;deploymentName);
+</br></font><font color="black"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Throwable&nbsp;t)&nbsp;{
+</br></font><font color="black"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cleanupStartAsync(context,&nbsp;deploymentName,&nbsp;t,&nbsp;duServiceName,&nbsp;classLoader);
+</br></font><font color="black"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;TODO&nbsp;this&nbsp;could&nbsp;be&nbsp;replaced&nbsp;by&nbsp;the&nbsp;superclass&nbsp;method&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;need&nbsp;for&nbsp;the&nbsp;TCCL&nbsp;change&nbsp;...</br></font><font color="black"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;stop()&nbsp;call&nbsp;doesn't&nbsp;do&nbsp;that&nbsp;so&nbsp;it's&nbsp;probably&nbsp;not&nbsp;needed
+</br></font><font color="black"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;void&nbsp;cleanupStartAsync(final&nbsp;StartContext&nbsp;context,&nbsp;final&nbsp;String&nbsp;deploymentName,&nbsp;final&nbsp;Th...</br></font><font color="black"><b>&nbsp;143.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;duServiceName,&nbsp;final&nbsp;ClassLoader&nbsp;toUse)&nbsp;{
+</br></font><font color="black"><b>&nbsp;144.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ExecutorService&nbsp;executorService&nbsp;=&nbsp;getLifecycleExecutorService();
+</br></font><font color="black"><b>&nbsp;145.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runnable&nbsp;r&nbsp;=&nbsp;new&nbsp;Runnable()&nbsp;{
+</br></font><font color="black"><b>&nbsp;146.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;147.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;run()&nbsp;{
+</br></font><font color="black"><b>&nbsp;148.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassLoader&nbsp;old&nbsp;=&nbsp;WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
+</br></font><font color="black"><b>&nbsp;149.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;150.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.pushOwner(duServiceName);
+</br></font><font color="black"><b>&nbsp;151.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(toUse);
+</br></font><font color="black"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unregisterAll(deploymentName);
+</br></font><font color="black"><b>&nbsp;153.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="black"><b>&nbsp;154.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;155.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.failed(ConnectorLogger.ROOT_LOGGER.failedToStartRaDeployment(cause,&nbsp;...</br></font><font color="black"><b>&nbsp;156.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="black"><b>&nbsp;157.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(old);
+</br></font><font color="black"><b>&nbsp;158.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.popOwner();
+</br></font><font color="black"><b>&nbsp;159.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;160.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;161.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;162.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};
+</br></font><font color="black"><b>&nbsp;163.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;164.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;executorService.execute(r);
+</br></font><font color="black"><b>&nbsp;165.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(RejectedExecutionException&nbsp;e)&nbsp;{
+</br></font><font color="black"><b>&nbsp;166.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r.run();
+</br></font><font color="black"><b>&nbsp;167.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="black"><b>&nbsp;168.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.asynchronous();
+</br></font><font color="black"><b>&nbsp;169.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;170.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;171.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;172.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;173.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Stop
+</br></font><font color="black"><b>&nbsp;174.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;175.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;176.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;stop(StopContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;177.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopAsync(context,&nbsp;deploymentName,&nbsp;deploymentServiceName);
+</br></font><font color="black"><b>&nbsp;178.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;179.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;180.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;CommonDeployment&nbsp;getRaDeployment()&nbsp;{
+</br></font><font color="black"><b>&nbsp;181.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;raDeployment;
+</br></font><font color="black"><b>&nbsp;182.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;183.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;184.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;AS7MetadataRepository&nbsp;getMdr()&nbsp;{
+</br></font><font color="black"><b>&nbsp;185.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;mdr.getValue();
+</br></font><font color="black"><b>&nbsp;186.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;187.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;188.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;class&nbsp;AS7RaDeployer&nbsp;extends&nbsp;AbstractAS7RaDeployer&nbsp;{
+</br></font><font color="black"><b>&nbsp;189.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;190.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;Activation&nbsp;activation;
+</br></font><font color="black"><b>&nbsp;191.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;boolean&nbsp;fromModule;
+</br></font><font color="black"><b>&nbsp;192.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;193.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;AS7RaDeployer(ServiceTarget&nbsp;serviceContainer,&nbsp;URL&nbsp;url,&nbsp;String&nbsp;deploymentName,&nbsp;File&nbsp;ro...</br></font><font color="black"><b>&nbsp;194.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connector&nbsp;cmd,&nbsp;Activation&nbsp;activation,&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;deploymentServiceName,&nbsp;fina...</br></font><font color="black"><b>&nbsp;195.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(serviceContainer,&nbsp;url,&nbsp;deploymentName,&nbsp;root,&nbsp;cl,&nbsp;cmd,&nbsp;deploymentServiceName);
+</br></font><font color="black"><b>&nbsp;196.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.activation&nbsp;=&nbsp;activation;
+</br></font><font color="black"><b>&nbsp;197.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fromModule&nbsp;=&nbsp;fromModule;
+</br></font><font color="black"><b>&nbsp;198.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;199.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;200.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;201.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;CommonDeployment&nbsp;doDeploy()&nbsp;throws&nbsp;Throwable&nbsp;{
+</br></font><font color="black"><b>&nbsp;202.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;203.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setConfiguration(getConfig().getValue());
+</br></font><font color="black"><b>&nbsp;204.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;205.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.start();
+</br></font><font color="black"><b>&nbsp;206.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;207.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CommonDeployment&nbsp;dep&nbsp;=&nbsp;this.createObjectsAndInjectValue(url,&nbsp;deploymentName,&nbsp;root,&nbsp;cl,&nbsp;c...</br></font><font color="black"><b>&nbsp;208.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;209.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;dep;
+</br></font><font color="black"><b>&nbsp;210.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;211.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;212.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;213.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;boolean&nbsp;checkActivation(Connector&nbsp;cmd,&nbsp;Activation&nbsp;activation)&nbsp;{
+</br></font><font color="black"><b>&nbsp;214.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cmd&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;215.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&lt;String&gt;&nbsp;raMcfClasses&nbsp;=&nbsp;new&nbsp;HashSet&lt;String&gt;();
+</br></font><font color="black"><b>&nbsp;216.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&lt;String&gt;&nbsp;raAoClasses&nbsp;=&nbsp;new&nbsp;HashSet&lt;String&gt;();
+</br></font><font color="black"><b>&nbsp;217.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;218.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ResourceAdapter&nbsp;ra&nbsp;=&nbsp;cmd.getResourceadapter();
+</br></font><font color="black"><b>&nbsp;219.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(ra&nbsp;!=&nbsp;null&nbsp;&&&nbsp;ra.getOutboundResourceadapter()&nbsp;!=&nbsp;null&nbsp;&&
+</br></font><font color="black"><b>&nbsp;220.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ra.getOutboundResourceadapter().getConnectionDefinitions()&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;221.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;ConnectionDefinition&gt;&nbsp;cdMetas&nbsp;=&nbsp;ra.getOutboundResourceadapter().getConn...</br></font><font color="black"><b>&nbsp;222.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(cdMetas.size()&nbsp;&gt;&nbsp;0)&nbsp;{
+</br></font><font color="black"><b>&nbsp;223.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(ConnectionDefinition&nbsp;cdMeta&nbsp;:&nbsp;cdMetas)&nbsp;{
+</br></font><font color="black"><b>&nbsp;224.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raMcfClasses.add(cdMeta.getManagedConnectionFactoryClass().getValue(...</br></font><font color="black"><b>&nbsp;225.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;226.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;227.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;228.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;229.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(ra&nbsp;!=&nbsp;null&nbsp;&&&nbsp;ra.getAdminObjects()&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;230.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;AdminObject&gt;&nbsp;aoMetas&nbsp;=&nbsp;ra.getAdminObjects();
+</br></font><font color="black"><b>&nbsp;231.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(aoMetas.size()&nbsp;&gt;&nbsp;0)&nbsp;{
+</br></font><font color="black"><b>&nbsp;232.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(AdminObject&nbsp;aoMeta&nbsp;:&nbsp;aoMetas)&nbsp;{
+</br></font><font color="black"><b>&nbsp;233.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raAoClasses.add(aoMeta.getAdminobjectClass().getValue());
+</br></font><font color="black"><b>&nbsp;234.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;235.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;236.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;237.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;238.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Pure&nbsp;inflow&nbsp;always&nbsp;active&nbsp;except&nbsp;in&nbsp;case&nbsp;it&nbsp;is&nbsp;deployed&nbsp;as&nbsp;module
+</br></font><font color="black"><b>&nbsp;239.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raMcfClasses.size()&nbsp;==&nbsp;0&nbsp;&&&nbsp;raAoClasses.size()&nbsp;==&nbsp;0&nbsp;&&&nbsp;!&nbsp;fromModule)
+</br></font><font color="black"><b>&nbsp;240.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</br></font><font color="black"><b>&nbsp;241.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;242.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;243.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(activation&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;244.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(activation.getConnectionDefinitions()&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;245.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(org.jboss.jca.common.api.metadata.resourceadapter.ConnectionDefinition&nbsp;...</br></font><font color="black"><b>&nbsp;246.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;clz&nbsp;=&nbsp;def.getClassName();
+</br></font><font color="black"><b>&nbsp;247.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;248.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raMcfClasses.contains(clz))
+</br></font><font color="black"><b>&nbsp;249.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</br></font><font color="black"><b>&nbsp;250.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;251.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;252.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;253.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(activation.getAdminObjects()&nbsp;!=&nbsp;null)&nbsp;{
+</br></font><font color="black"><b>&nbsp;254.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(org.jboss.jca.common.api.metadata.resourceadapter.AdminObject&nbsp;def&nbsp;:&nbsp;act...</br></font><font color="black"><b>&nbsp;255.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;clz&nbsp;=&nbsp;def.getClassName();
+</br></font><font color="black"><b>&nbsp;256.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;257.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(raAoClasses.contains(clz))
+</br></font><font color="black"><b>&nbsp;258.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</br></font><font color="black"><b>&nbsp;259.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;260.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;261.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;262.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;263.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;264.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;false;
+</br></font><font color="black"><b>&nbsp;265.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;266.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;267.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;268.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;DeployersLogger&nbsp;getLogger()&nbsp;{
+</br></font><font color="black"><b>&nbsp;269.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DEPLOYERS_LOGGER;
+</br></font><font color="black"><b>&nbsp;270.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;271.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;272.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;273.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;setRecoveryForResourceAdapterInResourceAdapterRepository(String&nbsp;key,&nbsp;boolean&nbsp;...</br></font><font color="black"><b>&nbsp;274.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;275.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raRepository.getValue().setRecoveryForResourceAdapter(key,&nbsp;isXA);
+</br></font><font color="black"><b>&nbsp;276.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Throwable&nbsp;t)&nbsp;{
+</br></font><font color="black"><b>&nbsp;277.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPLOYMENT_CONNECTOR_LOGGER.unableToRegisterRecovery(key,&nbsp;isXA);
+</br></font><font color="black"><b>&nbsp;278.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;279.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;280.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;281.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;282.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+	        	<td><font color="black"><b>&nbsp;&nbsp;&nbsp;1.</b>&nbsp;&nbsp;&nbsp;&nbsp;/*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;2.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;JBoss,&nbsp;Home&nbsp;of&nbsp;Professional&nbsp;Open&nbsp;Source.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;3.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Copyright&nbsp;2010,&nbsp;Red&nbsp;Hat,&nbsp;Inc.,&nbsp;and&nbsp;individual&nbsp;contributors
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;4.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;as&nbsp;indicated&nbsp;by&nbsp;the&nbsp;@author&nbsp;tags.&nbsp;See&nbsp;the&nbsp;copyright.txt&nbsp;file&nbsp;in&nbsp;the
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;5.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;distribution&nbsp;for&nbsp;a&nbsp;full&nbsp;listing&nbsp;of&nbsp;individual&nbsp;contributors.
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;6.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;7.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify&nbsp;it
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;8.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;as
+</br></font><font color="black"><b>&nbsp;&nbsp;&nbsp;9.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;10.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+</br></font><font color="black"><b>&nbsp;&nbsp;11.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;12.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;This&nbsp;software&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+</br></font><font color="black"><b>&nbsp;&nbsp;13.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+</br></font><font color="black"><b>&nbsp;&nbsp;14.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU
+</br></font><font color="black"><b>&nbsp;&nbsp;15.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+</br></font><font color="black"><b>&nbsp;&nbsp;16.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
+</br></font><font color="black"><b>&nbsp;&nbsp;17.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+</br></font><font color="black"><b>&nbsp;&nbsp;18.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;software;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free
+</br></font><font color="black"><b>&nbsp;&nbsp;19.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Software&nbsp;Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;St,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA
+</br></font><font color="black"><b>&nbsp;&nbsp;20.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;02110-1301&nbsp;USA,&nbsp;or&nbsp;see&nbsp;the&nbsp;FSF&nbsp;site:&nbsp;http://www.fsf.org.
+</br></font><font color="black"><b>&nbsp;&nbsp;21.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;22.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;23.</b>&nbsp;&nbsp;&nbsp;&nbsp;package&nbsp;org.jboss.as.connector.services.resourceadapters.deployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;24.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;25.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;static&nbsp;org.jboss.as.connector.logging.ConnectorLogger.DEPLOYMENT_CONNECTOR_LOGGER;
+</br></font><font color="black"><b>&nbsp;&nbsp;26.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;27.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.io.File;
+</br></font><font color="black"><b>&nbsp;&nbsp;28.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;java.net.URL;
+</br></font><font color="black"><b>&nbsp;&nbsp;29.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;30.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.metadata.deployment.ResourceAdapterDeployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;31.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.metadata.xmldescriptors.ConnectorXmlDescriptor;
+</br></font><font color="black"><b>&nbsp;&nbsp;32.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.services.resourceadapters.ResourceAdapterService;
+</br></font><font color="black"><b>&nbsp;&nbsp;33.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.subsystems.resourceadapters.ModifiableResourceAdapter;
+</br></font><font color="black"><b>&nbsp;&nbsp;34.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.connector.util.ConnectorServices;
+</br></font><font color="black"><b>&nbsp;&nbsp;35.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.as.naming.WritableServiceBasedNamingStore;
+</br></font><font color="black"><b>&nbsp;&nbsp;36.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.resourceadapter.Activation;
+</br></font><font color="black"><b>&nbsp;&nbsp;37.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.api.metadata.spec.Connector;
+</br></font><font color="black"><b>&nbsp;&nbsp;38.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.common.metadata.merge.Merger;
+</br></font><font color="black"><b>&nbsp;&nbsp;39.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.deployers.DeployersLogger;
+</br></font><font color="black"><b>&nbsp;&nbsp;40.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.jca.deployers.common.CommonDeployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;41.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.logging.Logger;
+</br></font><font color="black"><b>&nbsp;&nbsp;42.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.modules.Module;
+</br></font><font color="black"><b>&nbsp;&nbsp;43.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.Service;
+</br></font><font color="black"><b>&nbsp;&nbsp;44.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceController;
+</br></font><font color="black"><b>&nbsp;&nbsp;45.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;46.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.ServiceTarget;
+</br></font><font color="black"><b>&nbsp;&nbsp;47.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StartContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;48.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StartException;
+</br></font><font color="black"><b>&nbsp;&nbsp;49.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.jboss.msc.service.StopContext;
+</br></font><font color="black"><b>&nbsp;&nbsp;50.</b>&nbsp;&nbsp;&nbsp;&nbsp;import&nbsp;org.wildfly.security.manager.WildFlySecurityManager;
+</br></font><font color="black"><b>&nbsp;&nbsp;51.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;52.</b>&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;53.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;A&nbsp;ResourceAdapterXmlDeploymentService.
+</br></font><font color="black"><b>&nbsp;&nbsp;54.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:stefano.maestri@redhat.com"&gt;Stefano&nbsp;Maestri&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;55.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;@author&nbsp;&lt;a&nbsp;href="mailto:jesper.pedersen@jboss.org"&gt;Jesper&nbsp;Pedersen&lt;/a&gt;
+</br></font><font color="black"><b>&nbsp;&nbsp;56.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;57.</b>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;final&nbsp;class&nbsp;ResourceAdapterXmlDeploymentService&nbsp;extends&nbsp;AbstractResourceAdapterDeploymentServ...</br></font><font color="black"><b>&nbsp;&nbsp;58.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Service&lt;ResourceAdapterDeployment&gt;&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;59.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;60.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;static&nbsp;final&nbsp;DeployersLogger&nbsp;DEPLOYERS_LOGGER&nbsp;=&nbsp;Logger.getMessageLogger(DeployersLogger....</br></font><font color="black"><b>&nbsp;&nbsp;61.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;62.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;Module&nbsp;module;
+</br></font><font color="black"><b>&nbsp;&nbsp;63.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ConnectorXmlDescriptor&nbsp;connectorXmlDescriptor;
+</br></font><font color="black"><b>&nbsp;&nbsp;64.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;65.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;Activation&nbsp;raxml;
+</br></font><font color="black"><b>&nbsp;&nbsp;66.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;String&nbsp;deployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;67.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;68.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;String&nbsp;raName;
+</br></font><font color="black"><b>&nbsp;&nbsp;69.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;ServiceName&nbsp;deploymentServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;70.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;CommonDeployment&nbsp;raxmlDeployment&nbsp;=&nbsp;null;
+</br></font><font color="black"><b>&nbsp;&nbsp;71.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;ServiceName&nbsp;duServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;72.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;73.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;ResourceAdapterXmlDeploymentService(ConnectorXmlDescriptor&nbsp;connectorXmlDescriptor,&nbsp;Activa...</br></font><font color="black"><b>&nbsp;&nbsp;74.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Module&nbsp;module,&nbsp;final&nbsp;String&nbsp;deployment,&nbsp;final&nbsp;Service...</br></font><font color="black"><b>&nbsp;&nbsp;75.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.connectorXmlDescriptor&nbsp;=&nbsp;connectorXmlDescriptor;
+</br></font><font color="black"><b>&nbsp;&nbsp;76.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized&nbsp;(this)&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;77.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.raxml&nbsp;=&nbsp;raxml;
+</br></font><font color="black"><b>&nbsp;&nbsp;78.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;79.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.module&nbsp;=&nbsp;module;
+</br></font><font color="black"><b>&nbsp;&nbsp;80.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.deployment&nbsp;=&nbsp;deployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;81.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.raName&nbsp;=&nbsp;deployment;
+</br></font><font color="black"><b>&nbsp;&nbsp;82.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.deploymentServiceName&nbsp;=&nbsp;deploymentServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;83.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.duServiceName&nbsp;=&nbsp;duServiceName;
+</br></font><font color="black"><b>&nbsp;&nbsp;84.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;&nbsp;85.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;86.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;&nbsp;87.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Start
+</br></font><font color="black"><b>&nbsp;&nbsp;88.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;&nbsp;89.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;&nbsp;90.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;start(StartContext&nbsp;context)&nbsp;throws&nbsp;StartException&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;91.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;&nbsp;92.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connector&nbsp;cmd&nbsp;=&nbsp;mdr.getValue().getResourceAdapter(deployment);
+</br></font><font color="black"><b>&nbsp;&nbsp;93.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File&nbsp;root&nbsp;=&nbsp;mdr.getValue().getRoot(deployment);
+</br></font><font color="black"><b>&nbsp;&nbsp;94.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;95.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activation&nbsp;localRaXml&nbsp;=&nbsp;getRaxml();
+</br></font><font color="black"><b>&nbsp;&nbsp;96.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd&nbsp;=&nbsp;(new&nbsp;Merger()).mergeConnectorWithCommonIronJacamar(localRaXml,&nbsp;cmd);
+</br></font><font color="black"><b>&nbsp;&nbsp;97.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;&nbsp;98.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;id&nbsp;=&nbsp;((ModifiableResourceAdapter)&nbsp;raxml).getId();
+</br></font><font color="black"><b>&nbsp;&nbsp;99.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;raServiceName;
+</br></font><font color="black"><b>&nbsp;100.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(id&nbsp;==&nbsp;null&nbsp;||&nbsp;id.trim().isEmpty())&nbsp;{
+</br></font><font color="black"><b>&nbsp;101.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raServiceName&nbsp;=&nbsp;ConnectorServices.getResourceAdapterServiceName(raName);
+</br></font><font color="black"><b>&nbsp;102.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.connectorServicesRegistrationName&nbsp;=&nbsp;raName;
+</br></font><font color="black"><b>&nbsp;103.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+</br></font><font color="black"><b>&nbsp;104.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raServiceName&nbsp;=&nbsp;ConnectorServices.getResourceAdapterServiceName(id);
+</br></font><font color="black"><b>&nbsp;105.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.connectorServicesRegistrationName&nbsp;=&nbsp;id;
+</br></font><font color="black"><b>&nbsp;106.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;107.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;final&nbsp;AS7RaXmlDeployer&nbsp;raDeployer&nbsp;=&nbsp;new&nbsp;AS7RaXmlDeployer(context.getChildTarget(),&nbsp;conne...</br></font><font color="black"><b>&nbsp;108.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raName,&nbsp;root,&nbsp;module.getClassLoader(),&nbsp;cmd,&nbsp;localRaXml,&nbsp;deploymentServiceName);
+</br></font><font color="black"><b>&nbsp;109.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="red"><b>&nbsp;110.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raDeployer.setConfiguration(config.getValue());
+</br></font><font color="black"><b>&nbsp;111.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;112.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.pushOwner(duServiceName);
+</br></font><font color="red"><b>&nbsp;113.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassLoader&nbsp;old&nbsp;=&nbsp;WildFlySecurityManager.getCurrentContextClassLoaderPrivileged();
+</br></font><font color="black"><b>&nbsp;114.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="red"><b>&nbsp;115.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(module.getClassLoader(...</br></font><font color="black"><b>&nbsp;116.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raxmlDeployment&nbsp;=&nbsp;raDeployer.doDeploy();
+</br></font><font color="black"><b>&nbsp;117.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;finally&nbsp;{
+</br></font><font color="red"><b>&nbsp;118.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WildFlySecurityManager.setCurrentContextClassLoaderPrivileged(old);
+</br></font><font color="red"><b>&nbsp;119.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WritableServiceBasedNamingStore.popOwner();
+</br></font><font color="red"><b>&nbsp;120.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="red"><b>&nbsp;121.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;new&nbsp;ResourceAdapterDeployment(raxmlDeployment,&nbsp;raName,&nbsp;raServiceName);
+</br></font><font color="red"><b>&nbsp;122.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;managementRepository.getValue().getConnectors().add(value.getDeployment().getConnector()...</br></font><font color="red"><b>&nbsp;123.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;registry.getValue().registerResourceAdapterDeployment(value);
+</br></font><font color="red"><b>&nbsp;124.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.getChildTarget()
+</br></font><font color="red"><b>&nbsp;125.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addService(raServiceName,
+</br></font><font color="red"><b>&nbsp;126.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new&nbsp;ResourceAdapterService(raName,&nbsp;raServiceName,&nbsp;value.getDeployment().getR...</br></font><font color="red"><b>&nbsp;127.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.addDependency(deploymentServiceName)
+</br></font><font color="red"><b>&nbsp;128.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setInitialMode(ServiceController.Mode.ACTIVE).install();
+</br></font><font color="black"><b>&nbsp;129.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Throwable&nbsp;t)&nbsp;{
+</br></font><font color="black"><b>&nbsp;130.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cleanupStartAsync(context,&nbsp;raName,&nbsp;deploymentServiceName,&nbsp;t);
+</br></font><font color="black"><b>&nbsp;131.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;132.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;133.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;134.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**
+</br></font><font color="black"><b>&nbsp;135.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Stop
+</br></font><font color="black"><b>&nbsp;136.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/
+</br></font><font color="black"><b>&nbsp;137.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;138.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;void&nbsp;stop(StopContext&nbsp;context)&nbsp;{
+</br></font><font color="black"><b>&nbsp;139.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stopAsync(context,&nbsp;raName,&nbsp;deploymentServiceName);
+</br></font><font color="black"><b>&nbsp;140.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;141.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;142.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;CommonDeployment&nbsp;getRaxmlDeployment()&nbsp;{
+</br></font><font color="black"><b>&nbsp;143.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;raxmlDeployment;
+</br></font><font color="black"><b>&nbsp;144.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;145.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;146.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;synchronized&nbsp;void&nbsp;setRaxml(Activation&nbsp;raxml)&nbsp;{
+</br></font><font color="black"><b>&nbsp;147.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.raxml&nbsp;=&nbsp;raxml;
+</br></font><font color="black"><b>&nbsp;148.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;149.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;150.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;synchronized&nbsp;Activation&nbsp;getRaxml()&nbsp;{
+</br></font><font color="black"><b>&nbsp;151.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;raxml;
+</br></font><font color="black"><b>&nbsp;152.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;153.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;154.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;155.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;class&nbsp;AS7RaXmlDeployer&nbsp;extends&nbsp;AbstractAS7RaDeployer&nbsp;{
+</br></font><font color="black"><b>&nbsp;156.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;157.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;private&nbsp;final&nbsp;Activation&nbsp;activation;
+</br></font><font color="black"><b>&nbsp;158.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;159.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;160.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;AS7RaXmlDeployer(ServiceTarget&nbsp;serviceTarget,&nbsp;URL&nbsp;url,&nbsp;String&nbsp;deploymentName,&nbsp;File&nbsp;ro...</br></font><font color="black"><b>&nbsp;161.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connector&nbsp;cmd,&nbsp;Activation&nbsp;activation,&nbsp;&nbsp;final&nbsp;ServiceName&nbsp;deploymentServiceName)&nbsp;{
+</br></font><font color="black"><b>&nbsp;162.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(serviceTarget,&nbsp;url,&nbsp;deploymentName,&nbsp;root,&nbsp;cl,&nbsp;cmd,&nbsp;deploymentServiceName);
+</br></font><font color="black"><b>&nbsp;163.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.activation&nbsp;=&nbsp;activation;
+</br></font><font color="black"><b>&nbsp;164.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;165.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;166.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;167.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;CommonDeployment&nbsp;doDeploy()&nbsp;throws&nbsp;Throwable&nbsp;{
+</br></font><font color="black"><b>&nbsp;168.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;169.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.setConfiguration(getConfig().getValue());
+</br></font><font color="black"><b>&nbsp;170.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;171.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.start();
+</br></font><font color="black"><b>&nbsp;172.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;173.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CommonDeployment&nbsp;dep&nbsp;=&nbsp;this.createObjectsAndInjectValue(url,&nbsp;deploymentName,&nbsp;root,&nbsp;cl,&nbsp;c...</br></font><font color="black"><b>&nbsp;174.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;175.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;dep;
+</br></font><font color="black"><b>&nbsp;176.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;177.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;178.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;179.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;boolean&nbsp;checkActivation(Connector&nbsp;cmd,&nbsp;Activation&nbsp;activation)&nbsp;{
+</br></font><font color="black"><b>&nbsp;180.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;true;
+</br></font><font color="black"><b>&nbsp;181.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;182.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;183.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;184.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;DeployersLogger&nbsp;getLogger()&nbsp;{
+</br></font><font color="black"><b>&nbsp;185.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;DEPLOYERS_LOGGER;
+</br></font><font color="black"><b>&nbsp;186.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;187.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;188.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override
+</br></font><font color="black"><b>&nbsp;189.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected&nbsp;void&nbsp;setRecoveryForResourceAdapterInResourceAdapterRepository(String&nbsp;key,&nbsp;boolean&nbsp;...</br></font><font color="black"><b>&nbsp;190.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{
+</br></font><font color="black"><b>&nbsp;191.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raRepository.getValue().setRecoveryForResourceAdapter(key,&nbsp;isXA);
+</br></font><font color="black"><b>&nbsp;192.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Throwable&nbsp;t)&nbsp;{
+</br></font><font color="black"><b>&nbsp;193.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEPLOYMENT_CONNECTOR_LOGGER.unableToRegisterRecovery(key,&nbsp;isXA);
+</br></font><font color="black"><b>&nbsp;194.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;195.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;196.</b>&nbsp;&nbsp;&nbsp;&nbsp;
+</br></font><font color="black"><b>&nbsp;197.</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font><font color="black"><b>&nbsp;198.</b>&nbsp;&nbsp;&nbsp;&nbsp;}
+</br></font>
+		  </tr>
+  		</table>
+  		</div>
+</body>
+</html>
